@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PhoneCall, Mail, MapPin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
-import { DISPLAY_PHONE, WHATSAPP_LINK } from '../data/websiteData';
+import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK } from '../data/websiteData';
 import { trackVisitorEvent } from '../lib/analytics';
 import { getVisitorId } from '../lib/fingerprint';
 
@@ -99,14 +99,19 @@ export const ContactSection: React.FC = () => {
                 </div>
               </div>
 
-              {/* Business Email Placeholder */}
+              {/* Official Email */}
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 rounded-xl bg-navy-card border border-gold-500/30 flex items-center justify-center text-gold-400 flex-shrink-0">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-xs font-bold uppercase text-gold-400 tracking-wider">Official Email</div>
-                  <div className="text-sm font-semibold text-slate-200 font-mono">[Business Email]</div>
+                  <a 
+                    href={`mailto:${BUSINESS_EMAIL}`}
+                    className="text-sm font-semibold text-slate-200 hover:text-gold-300 transition-colors font-mono block"
+                  >
+                    {BUSINESS_EMAIL}
+                  </a>
                   <p className="text-xs text-slate-400">Fast response within 2 business hours</p>
                 </div>
               </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrandLogo } from './BrandLogo';
 import { PhoneCall, ArrowUp, ShieldCheck, Mail, MapPin, Fingerprint } from 'lucide-react';
-import { DISPLAY_PHONE, WHATSAPP_LINK } from '../data/websiteData';
+import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK } from '../data/websiteData';
 import { trackVisitorEvent } from '../lib/analytics';
 
 interface FooterProps {
@@ -81,9 +81,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
               Connect With Us
             </h4>
             <div className="space-y-2 text-xs">
-              <div className="flex items-center gap-2 text-slate-400">
-                <Mail className="w-3.5 h-3.5 text-gold-400" /> [Business Email]
-              </div>
+              <a href={`mailto:${BUSINESS_EMAIL}`} className="flex items-center gap-2 text-slate-400 hover:text-gold-300 transition-colors">
+                <Mail className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+                <span className="truncate">{BUSINESS_EMAIL}</span>
+              </a>
               <div className="flex items-center gap-2 text-slate-400">
                 <MapPin className="w-3.5 h-3.5 text-gold-400" /> [Office Address]
               </div>
