@@ -1,4 +1,5 @@
 import { createClient } from '@libsql/client';
+import { Resend } from 'resend';
 
 const headers = {
   'Access-Control-Allow-Origin': '*',
@@ -157,6 +158,50 @@ export const handler = async (event) => {
           now,
         ],
       });
+
+      // Send email notification to owner
+      try {
+        const resendApiKey = process.env.RESEND_API_KEY;
+        const notifyEmail = process.env.NOTIFICATION_EMAIL || 'visaescapeodyssey@gmail.com';
+        if (resendApiKey) {
+          const resend = new Resend(resendApiKey);
+          await resend.emails.send({
+            from: 'Escape Odyssey Leads <onboarding@resend.dev>',
+            to: notifyEmail,
+            subject: `🚀 New Visa Lead: ${fullName} → ${destination || 'Not Specified'}`,
+            html: `
+              <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #f8fafc; border-radius: 12px; overflow: hidden;">
+                <div style="background: #015da5; padding: 24px; text-align: center;">
+                  <h1 style="color: white; margin: 0; font-size: 22px;">🌍 New Visa Inquiry Received!</h1>
+                  <p style="color: #bfdbfe; margin: 4px 0 0;">Escape Odyssey Travel & Tours</p>
+                </div>
+                <div style="padding: 24px;">
+                  <table style="width: 100%; border-collapse: collapse;">
+                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #64748b; width: 140px;">👤 Full Name</td><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #1e293b;">${fullName}</td></tr>
+                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">📞 Phone</td><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; font-weight: bold; color: #1e293b;">${phone}</td></tr>
+                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">📧 Email</td><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b;">${email || 'Not provided'}</td></tr>
+                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">🌍 Destination</td><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b;">${destination || 'Not specified'}</td></tr>
+                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">📄 Visa Type</td><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b;">${visaType || 'Not specified'}</td></tr>
+                    <tr><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #64748b;">✈️ Travel Date</td><td style="padding: 10px 0; border-bottom: 1px solid #e2e8f0; color: #1e293b;">${travelDate || 'Not specified'}</td></tr>
+                    <tr><td style="padding: 10px 0; color: #64748b;">📝 Notes</td><td style="padding: 10px 0; color: #1e293b;">${notes || 'None'}</td></tr>
+                  </table>
+                  <div style="margin-top: 24px; padding: 16px; background: #eff6ff; border-radius: 8px; border-left: 4px solid #015da5;">
+                    <p style="margin: 0; color: #015da5; font-weight: bold;">⏰ Received: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} IST</p>
+                    <p style="margin: 4px 0 0; color: #64748b; font-size: 13px;">Lead ID: #${inquiryId}</p>
+                  </div>
+                </div>
+                <div style="background: #f1f5f9; padding: 16px; text-align: center;">
+                  <p style="margin: 0; color: #94a3b8; font-size: 12px;">Escape Odyssey Travel & Tours Admin Notification</p>
+                </div>
+              </div>
+            `,
+          });
+          console.log(`[Email Sent] New lead notification sent for inquiry #${inquiryId}`);
+        }
+      } catch (emailError) {
+        console.warn('[Email Error] Failed to send notification:', emailError.message);
+        // Don't fail the request if email fails
+      }
 
       return {
         statusCode: 201,
