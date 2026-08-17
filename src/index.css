@@ -4,45 +4,52 @@
 
 @layer base {
   body {
-    background-color: #070D18;
-    color: #F8FAFC;
+    background-color: #FAF9F5;
+    color: #1E293B;
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
 }
 
 @layer utilities {
   .text-gold-gradient {
-    background: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
+    background: linear-gradient(135deg, #6D28D9 0%, #D946EF 50%, #F59E0B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-pastel-gradient {
+    background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
   
   .bg-gold-gradient {
-    background: linear-gradient(135deg, #D4AF37 0%, #F7D97B 50%, #B8860B 100%);
+    background: linear-gradient(135deg, #7C3AED 0%, #D946EF 50%, #F59E0B 100%);
   }
 
   .bg-gold-gradient-hover {
-    background: linear-gradient(135deg, #F7D97B 0%, #D4AF37 50%, #EAB338 100%);
+    background: linear-gradient(135deg, #6D28D9 0%, #C084FC 50%, #D97706 100%);
   }
 
   .border-gold-gradient {
-    border-image: linear-gradient(135deg, #BF953F, #FCF6BA, #AA771C) 1;
+    border-image: linear-gradient(135deg, #8B5CF6, #EC4899, #F59E0B) 1;
   }
 
   .glass-navy {
-    background: rgba(17, 34, 64, 0.75);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.06);
   }
 
   .glass-navy-hover {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .glass-navy-hover:hover {
-    background: rgba(22, 42, 77, 0.85);
-    border-color: rgba(212, 175, 55, 0.4);
-    box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.8), 0 0 20px rgba(212, 175, 55, 0.15);
+    background: rgba(255, 255, 255, 0.98);
+    border-color: rgba(139, 92, 246, 0.35);
+    box-shadow: 0 14px 35px -5px rgba(124, 58, 237, 0.12), 0 0 20px rgba(244, 114, 182, 0.1);
   }
 }
 
@@ -51,12 +58,13 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #070D18;
+  background: #FAF9F5;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #A78BFA;
 }
+

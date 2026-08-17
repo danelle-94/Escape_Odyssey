@@ -1,87 +1,124 @@
 import React from 'react';
-import { Plane, Compass, Sparkles, MapPin } from 'lucide-react';
+import { Clock, Calendar, ArrowRight } from 'lucide-react';
 
 interface TravelInspirationProps {
-  onOpenModal: () => void;
+  onOpenModal?: () => void;
 }
 
-export const TravelInspiration: React.FC<TravelInspirationProps> = ({ onOpenModal }) => {
-  const mapPins = [
-    { name: 'Paris, France', x: '48%', y: '32%', delay: '0s' },
-    { name: 'New York, USA', x: '25%', y: '35%', delay: '1s' },
-    { name: 'London, UK', x: '46%', y: '28%', delay: '2s' },
-    { name: 'Dubai, UAE', x: '62%', y: '45%', delay: '0.5s' },
-    { name: 'Tokyo, Japan', x: '85%', y: '38%', delay: '1.5s' },
-    { name: 'Sydney, Australia', x: '88%', y: '75%', delay: '2.5s' },
-  ];
+const ARTICLES = [
+  {
+    id: 1,
+    title: 'How to Avoid Schengen Visa Rejection: 7 Key Tips for Indian Travelers',
+    snippet: 'Learn how to present rock-solid financial proof, itinerary details, and cover letters that guarantee embassy confidence.',
+    category: 'Schengen Tips',
+    readTime: '4 min read',
+    date: 'Aug 12, 2026',
+    author: 'Aditi Kulkarni',
+    image: 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 2,
+    title: 'US B1/B2 Visa Interview Questions & Model Answers for 2026',
+    snippet: 'Master your consulate interview with proven answers regarding tie-backs to India, trip funding, and travel history.',
+    category: 'US Visa Guide',
+    readTime: '6 min read',
+    date: 'Aug 08, 2026',
+    author: 'Escape Odyssey Desk',
+    image: 'https://images.unsplash.com/photo-1508433957232-3107f5fd5995?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    id: 3,
+    title: 'Top 10 Easy-Visa Nations for Indian Passport Holders',
+    snippet: 'Discover stunning destinations with e-Visas or visa-on-arrival processes that promise hassle-free approval.',
+    category: 'Destination Guide',
+    readTime: '5 min read',
+    date: 'Aug 02, 2026',
+    author: 'Rohan Sharma',
+    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800'
+  }
+];
 
+export const TravelInspiration: React.FC<TravelInspirationProps> = () => {
   return (
-    <section className="py-24 bg-navy-950 relative overflow-hidden">
-      
-      {/* Background Glows */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-navy-900 via-navy-950 to-navy-950 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
-
+    <section className="py-24 bg-[#FAF9F5] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        <div className="relative rounded-3xl bg-navy-card/90 border border-gold-500/30 p-8 sm:p-12 xl:p-16 overflow-hidden shadow-gold-glow-lg text-center space-y-8">
-          
-          {/* Subtle Dotted World Map Visual Background */}
-          <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-
-          {/* Gold Arc Flight Routes SVG Overlay */}
-          <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40" xmlns="http://www.w3.org/2000/svg">
-            <path d="M 250 180 Q 480 80 620 220" fill="none" stroke="#D4AF37" strokeWidth="2" strokeDasharray="6 6" />
-            <path d="M 480 80 Q 750 120 850 190" fill="none" stroke="#D4AF37" strokeWidth="2" strokeDasharray="6 6" />
-            <path d="M 620 220 Q 750 350 880 380" fill="none" stroke="#D4AF37" strokeWidth="1.5" strokeDasharray="4 4" />
-          </svg>
-
-          {/* Interactive Pin Popups */}
-          {mapPins.map((pin, i) => (
-            <div
-              key={i}
-              className="absolute hidden md:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-navy-950/90 border border-gold-500/40 text-[10px] font-bold text-gold-300 shadow-md animate-pulse-glow"
-              style={{ left: pin.x, top: pin.y, animationDelay: pin.delay }}
-            >
-              <MapPin className="w-3 h-3 text-gold-400" />
-              <span>{pin.name}</span>
-            </div>
-          ))}
-
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-950 border border-gold-500/40 shadow-md">
-            <Sparkles className="w-4 h-4 text-gold-400" />
-            <span className="text-xs font-bold text-gold-300 uppercase tracking-widest">
-              UNLIMITED HORIZONS
-            </span>
-          </div>
-
-          {/* Main Title */}
-          <h2 className="text-3xl sm:text-5xl xl:text-6xl font-extrabold text-white font-cinzel leading-tight max-w-4xl mx-auto">
-            Where Will Your Journey Take You?
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+          <span className="text-xs font-bold text-purple-900 uppercase tracking-widest px-3.5 py-1 rounded-full bg-white border border-purple-200 shadow-sm">
+            INSIGHTS & GUIDES
+          </span>
+          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-slate-900 font-cinzel">
+            Travel & Visa Inspiration
           </h2>
-
-          {/* Quote / Subtext */}
-          <p className="text-lg sm:text-2xl text-gold-gradient font-script max-w-2xl mx-auto leading-relaxed">
-            "From dream destinations to unforgettable experiences, we're here to help make your journey possible."
+          <p className="text-slate-600 text-sm sm:text-base font-medium">
+            Pro tips, Embassy guidelines, and travel inspiration to help you prepare for seamless international journeys.
           </p>
+        </div>
 
-          <p className="text-slate-300 text-sm sm:text-base max-w-xl mx-auto">
-            Whether it's your first international vacation or an urgent business flight, Escape Odyssey handles every detail with precision.
-          </p>
-
-          {/* CTA */}
-          <div className="pt-4 flex justify-center">
-            <button
-              onClick={onOpenModal}
-              className="px-9 py-4 rounded-full bg-gold-gradient hover:bg-gold-gradient-hover text-navy-950 font-extrabold text-base shadow-gold-glow hover:shadow-gold-glow-lg transition-all transform hover:-translate-y-1 flex items-center gap-3 group"
+        {/* 3 Column Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {ARTICLES.map((article) => (
+            <article
+              key={article.id}
+              className="group bg-white rounded-2xl overflow-hidden border border-purple-100 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(139,92,246,0.12)]"
             >
-              <Compass className="w-5 h-5" />
-              <span>Plan My Journey</span>
-              <Plane className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
-            </button>
-          </div>
+              <div>
+                {/* Article Image Container */}
+                <div className="relative h-48 overflow-hidden">
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                  
+                  {/* Category Tag */}
+                  <span className="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded-full bg-purple-900/90 text-white border border-purple-300 shadow-sm">
+                    {article.category}
+                  </span>
 
+                  {/* Read Time Tag */}
+                  <span className="absolute bottom-3 right-3 text-[10px] font-semibold px-2.5 py-1 rounded-md bg-white/90 text-slate-800 border border-slate-200 backdrop-blur-md shadow-sm flex items-center gap-1">
+                    <Clock className="w-3 h-3 text-purple-600" />
+                    {article.readTime}
+                  </span>
+                </div>
+
+                {/* Article Content */}
+                <div className="p-6 space-y-3">
+                  <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-purple-600" />
+                      {article.date}
+                    </span>
+                    <span>•</span>
+                    <span>By {article.author}</span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-slate-900 font-cinzel group-hover:text-purple-700 transition-colors leading-snug">
+                    {article.title}
+                  </h3>
+
+                  <p className="text-xs text-slate-600 line-clamp-3 leading-relaxed font-medium">
+                    {article.snippet}
+                  </p>
+                </div>
+              </div>
+
+              {/* Card Footer Link */}
+              <div className="p-6 pt-0">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-purple-700 hover:text-pink-600 transition-colors group/link"
+                >
+                  <span>Read Guide</span>
+                  <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />
+                </a>
+              </div>
+
+            </article>
+          ))}
         </div>
 
       </div>

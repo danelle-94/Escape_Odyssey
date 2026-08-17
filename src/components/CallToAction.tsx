@@ -4,24 +4,22 @@ import { DISPLAY_PHONE, WHATSAPP_LINK } from '../data/websiteData';
 
 export const CallToAction: React.FC = () => {
   return (
-    <section className="py-20 bg-navy-950 relative overflow-hidden">
+    <section className="py-20 bg-[#FAF9F5] relative overflow-hidden">
       
       {/* Background Gradient & Light Flares */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-950 via-navy-900 to-navy-950" />
-      <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-gold-500/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -top-20 -right-20 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-100/50 via-[#FAF9F5] to-[#FAF9F5] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-r from-navy-950 via-navy-card to-navy-950 border-2 border-gold-500/40 p-8 sm:p-12 lg:p-16 text-center space-y-8 shadow-gold-glow-lg relative overflow-hidden">
+        <div className="rounded-3xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 p-8 sm:p-12 lg:p-16 text-center space-y-8 shadow-[0_15px_45px_rgba(124,58,237,0.25)] relative overflow-hidden text-white">
           
-          {/* Decorative Corner Gold Accents */}
-          <div className="absolute top-0 left-0 w-24 h-24 bg-gold-500/10 rounded-br-full pointer-events-none" />
-          <div className="absolute bottom-0 right-0 w-24 h-24 bg-gold-500/10 rounded-tl-full pointer-events-none" />
+          {/* Decorative Corner Accents */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-br-full pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-32 h-32 bg-white/10 rounded-tl-full pointer-events-none" />
 
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy-950 border border-gold-500/40 shadow-sm">
-            <Sparkles className="w-4 h-4 text-gold-400" />
-            <span className="text-xs font-bold text-gold-300 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-sm">
+            <Sparkles className="w-4 h-4 text-amber-200" />
+            <span className="text-xs font-bold text-white uppercase tracking-widest">
               IMMEDIATE VISA CONSULTATION
             </span>
           </div>
@@ -32,7 +30,7 @@ export const CallToAction: React.FC = () => {
           </h2>
 
           {/* Subtext */}
-          <p className="text-slate-200 text-base sm:text-xl max-w-2xl mx-auto font-medium">
+          <p className="text-purple-50 text-base sm:text-xl max-w-2xl mx-auto font-medium">
             Let our experts make your visa process simple, clear and stress-free.
           </p>
 
@@ -44,7 +42,7 @@ export const CallToAction: React.FC = () => {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-base shadow-lg hover:shadow-emerald-500/30 transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white font-extrabold text-base shadow-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
               <MessageSquare className="w-5 h-5" />
               <span>WhatsApp Us Now</span>
@@ -54,17 +52,17 @@ export const CallToAction: React.FC = () => {
             {/* Direct Call Button */}
             <a
               href={`tel:${DISPLAY_PHONE}`}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-gradient hover:bg-gold-gradient-hover text-navy-950 font-extrabold text-base shadow-gold-glow hover:shadow-gold-glow-lg transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-purple-50 text-purple-900 font-extrabold text-base shadow-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
-              <PhoneCall className="w-5 h-5 text-navy-950" />
+              <PhoneCall className="w-5 h-5 text-purple-700" />
               <span>Call {DISPLAY_PHONE}</span>
             </a>
 
           </div>
 
-          <div className="pt-2 flex items-center justify-center gap-4 text-xs text-slate-400">
+          <div className="pt-2 flex items-center justify-center gap-4 text-xs text-purple-100 font-medium">
             <span className="flex items-center gap-1">
-              <ShieldCheck className="w-4 h-4 text-gold-400" /> Fast Response Guaranteed
+              <ShieldCheck className="w-4 h-4 text-amber-200" /> Fast Response Guaranteed
             </span>
             <span>•</span>
             <span>No Hidden Consultation Fees</span>

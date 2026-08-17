@@ -15,29 +15,29 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
-      case 'BookOpen': return <BookOpen className="w-5 h-5 text-gold-400" />;
-      case 'CreditCard': return <CreditCard className="w-5 h-5 text-gold-400" />;
-      case 'Plane': return <Plane className="w-5 h-5 text-gold-400" />;
-      case 'Briefcase': return <Briefcase className="w-5 h-5 text-gold-400" />;
-      case 'Heart': return <Heart className="w-5 h-5 text-gold-400" />;
-      default: return <FileText className="w-5 h-5 text-gold-400" />;
+      case 'BookOpen': return <BookOpen className="w-5 h-5 text-purple-600" />;
+      case 'CreditCard': return <CreditCard className="w-5 h-5 text-purple-600" />;
+      case 'Plane': return <Plane className="w-5 h-5 text-purple-600" />;
+      case 'Briefcase': return <Briefcase className="w-5 h-5 text-purple-600" />;
+      case 'Heart': return <Heart className="w-5 h-5 text-purple-600" />;
+      default: return <FileText className="w-5 h-5 text-purple-600" />;
     }
   };
 
   return (
-    <section className="py-24 bg-navy-900 relative">
+    <section className="py-24 bg-[#FAF9F5] relative">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
-          <span className="text-xs font-bold text-gold-400 uppercase tracking-widest px-3.5 py-1 rounded-full bg-navy-950 border border-gold-500/30">
+          <span className="text-xs font-bold text-purple-900 uppercase tracking-widest px-3.5 py-1 rounded-full bg-white border border-purple-200 shadow-sm">
             EMBASSY PREPARATION
           </span>
-          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-white font-cinzel">
+          <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-slate-900 font-cinzel">
             Prepare With Confidence
           </h2>
-          <p className="text-slate-300 text-sm sm:text-base">
+          <p className="text-slate-600 text-sm sm:text-base font-medium">
             Review standard embassy document requirements to ensure zero rejections and smooth filing.
           </p>
 
@@ -54,8 +54,8 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   activeTab === tab.id
-                    ? 'bg-gold-gradient text-navy-950 shadow-gold-glow'
-                    : 'bg-navy-950 text-slate-300 hover:text-gold-300 border border-slate-800'
+                    ? 'bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white shadow-md'
+                    : 'bg-white text-slate-700 hover:text-purple-700 border border-slate-200 shadow-sm'
                 }`}
               >
                 {tab.label}
@@ -69,30 +69,30 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
           {filteredCategories.map((cat) => (
             <div
               key={cat.id}
-              className="bg-navy-950 rounded-2xl p-6 border border-gold-500/20 hover:border-gold-500/50 transition-all shadow-navy-card flex flex-col justify-between"
+              className="bg-white rounded-2xl p-6 border border-purple-100 hover:border-purple-300 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(139,92,246,0.1)] flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-navy-card border border-gold-500/30 flex items-center justify-center flex-shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center flex-shrink-0">
                     {getCategoryIcon(cat.icon)}
                   </div>
                   <div>
-                    <h3 className="text-base font-bold text-white font-cinzel">{cat.title}</h3>
-                    <p className="text-[11px] text-slate-400">{cat.description}</p>
+                    <h3 className="text-base font-bold text-slate-900 font-cinzel">{cat.title}</h3>
+                    <p className="text-[11px] text-slate-500 font-medium">{cat.description}</p>
                   </div>
                 </div>
 
-                <ul className="space-y-2.5 text-xs text-slate-300 my-4">
+                <ul className="space-y-2.5 text-xs text-slate-700 font-medium my-4">
                   {cat.items.map((item, idx) => (
                     <li key={idx} className="flex items-start gap-2">
-                      <CheckCircle2 className="w-4 h-4 text-gold-400 mt-0.5 flex-shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <div className="pt-3 border-t border-slate-800 text-[10px] text-gold-400 font-semibold flex items-center gap-1">
+              <div className="pt-3 border-t border-slate-100 text-[10px] text-purple-700 font-semibold flex items-center gap-1">
                 <span>Verified by Escape Odyssey Document Auditors</span>
               </div>
             </div>
@@ -100,19 +100,19 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
         </div>
 
         {/* Disclaimer & CTA Card */}
-        <div className="bg-navy-card rounded-2xl p-6 sm:p-8 border border-gold-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-gold-glow">
+        <div className="bg-gradient-to-r from-purple-50 via-pink-50/50 to-purple-50 rounded-2xl p-6 sm:p-8 border border-purple-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-gold-400 text-xs font-bold uppercase tracking-wider">
-              <ShieldAlert className="w-4 h-4" /> Important Document Notice
+            <div className="flex items-center justify-center md:justify-start gap-2 text-purple-800 text-xs font-bold uppercase tracking-wider">
+              <ShieldAlert className="w-4 h-4 text-purple-600" /> Important Document Notice
             </div>
-            <p className="text-xs text-slate-300 max-w-2xl">
+            <p className="text-xs text-slate-600 font-medium max-w-2xl">
               * Note: Exact document specifications (such as bank balance thresholds, photo dimensions, and invitation templates) vary depending on your target destination country, citizenship, and visa stream.
             </p>
           </div>
 
           <button
             onClick={onOpenModal}
-            className="px-8 py-3.5 rounded-xl bg-gold-gradient hover:bg-gold-gradient-hover text-navy-950 font-bold text-sm shadow-gold-glow flex items-center gap-2 flex-shrink-0"
+            className="px-8 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 hover:from-purple-700 hover:to-pink-600 text-white font-bold text-sm shadow-md flex items-center gap-2 flex-shrink-0"
           >
             <span>Check My Documents</span>
             <ArrowRight className="w-4 h-4" />

@@ -8,27 +8,39 @@ export default {
     extend: {
       colors: {
         navy: {
-          800: '#162238',
-          900: '#0F1A2E',
-          950: '#070D18',
-          card: '#112240',
-          glass: 'rgba(17, 34, 64, 0.75)',
+          800: '#E8E5DF',
+          900: '#F3F0EA',
+          950: '#FAF9F5',
+          card: '#FFFFFF',
+          glass: 'rgba(255, 255, 255, 0.85)',
         },
         gold: {
-          100: '#FFF9E6',
-          200: '#FCEAB6',
-          300: '#F7D97B',
-          400: '#EAB338',
-          500: '#D4AF37',
-          600: '#B8860B',
-          700: '#8C6203',
-          gradient: 'linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C)',
+          100: '#FAF5FF',
+          200: '#DDD6FE',
+          300: '#7C3AED',
+          400: '#6D28D9',
+          500: '#5B21B6',
+          600: '#4C1D95',
+          700: '#3B0764',
+          gradient: 'linear-gradient(135deg, #7C3AED 0%, #EC4899 50%, #F59E0B 100%)',
         },
         brand: {
-          accent: '#D4AF37',
-          deep: '#0A192F',
-          royal: '#112240',
-          light: '#F8FAFC',
+          accent: '#7C3AED',
+          deep: '#1E293B',
+          royal: '#FFFFFF',
+          light: '#FAF9F5',
+        },
+        pastel: {
+          violet: '#8B5CF6',
+          lavender: '#F5F3FF',
+          rose: '#FFF1F2',
+          pink: '#F472B6',
+          mint: '#ECFDF5',
+          teal: '#14B8A6',
+          sky: '#F0F9FF',
+          blue: '#38BDF8',
+          cream: '#FAF9F5',
+          amber: '#FEF3C7',
         }
       },
       fontFamily: {
@@ -38,9 +50,9 @@ export default {
         script: ['"Great Vibes"', 'cursive'],
       },
       boxShadow: {
-        'gold-glow': '0 0 25px rgba(212, 175, 55, 0.25)',
-        'gold-glow-lg': '0 0 40px rgba(212, 175, 55, 0.4)',
-        'navy-card': '0 10px 30px -10px rgba(2, 12, 27, 0.7)',
+        'gold-glow': '0 8px 25px rgba(124, 58, 237, 0.2)',
+        'gold-glow-lg': '0 12px 35px rgba(236, 72, 153, 0.22)',
+        'navy-card': '0 10px 30px -5px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(226, 232, 240, 0.8)',
       },
       animation: {
         'float-slow': 'float 6s ease-in-out infinite',
@@ -55,8 +67,8 @@ export default {
           '50%': { transform: 'translateY(-14px) rotate(1.5deg)' },
         },
         pulseGlow: {
-          '0%, 100%': { opacity: '0.4', filter: 'drop-shadow(0 0 15px rgba(212, 175, 55, 0.3))' },
-          '50%': { opacity: '0.8', filter: 'drop-shadow(0 0 30px rgba(212, 175, 55, 0.6))' },
+          '0%, 100%': { opacity: '0.6', filter: 'drop-shadow(0 0 15px rgba(139, 92, 246, 0.25))' },
+          '50%': { opacity: '0.9', filter: 'drop-shadow(0 0 25px rgba(236, 72, 153, 0.4))' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
@@ -71,3 +83,4 @@ export default {
   },
   plugins: [],
 }
+

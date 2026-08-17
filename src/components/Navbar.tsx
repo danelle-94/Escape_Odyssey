@@ -37,8 +37,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
     <header 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled 
-          ? 'bg-navy-950/90 backdrop-blur-md border-b border-gold-500/20 py-3 shadow-2xl' 
-          : 'bg-gradient-to-b from-navy-950/95 via-navy-950/70 to-transparent py-4'
+          ? 'bg-white/90 backdrop-blur-md border-b border-purple-100 py-3 shadow-md' 
+          : 'bg-gradient-to-b from-white/95 via-white/70 to-transparent py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -54,10 +54,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             <a
               key={link.name}
               href={link.href}
-              className="px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-medium text-slate-200 hover:text-gold-400 transition-colors relative group whitespace-nowrap"
+              className="px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold text-slate-700 hover:text-purple-700 transition-colors relative group whitespace-nowrap"
             >
               {link.name}
-              <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gold-gradient transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-gradient-to-r from-purple-600 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </a>
           ))}
         </nav>
@@ -68,9 +68,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           <a
             href={`tel:${DISPLAY_PHONE}`}
             onClick={() => trackVisitorEvent('phone_clicked')}
-            className="flex items-center gap-2 text-slate-200 hover:text-gold-400 text-xs xl:text-sm font-semibold transition-colors group whitespace-nowrap"
+            className="flex items-center gap-2 text-slate-700 hover:text-purple-700 text-xs xl:text-sm font-semibold transition-colors group whitespace-nowrap"
           >
-            <div className="w-8 h-8 rounded-full bg-navy-card border border-gold-500/30 flex items-center justify-center text-gold-400 group-hover:bg-gold-500 group-hover:text-navy-950 transition-all shadow-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-all shadow-sm flex-shrink-0">
               <PhoneCall className="w-3.5 h-3.5" />
             </div>
             <span className="font-mono text-xs xl:text-sm whitespace-nowrap">{DISPLAY_PHONE}</span>
@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           {/* Primary CTA */}
           <button
             onClick={() => onOpenModal()}
-            className="px-4 py-2.5 rounded-full bg-gold-gradient hover:bg-gold-gradient-hover text-navy-950 font-bold text-xs xl:text-sm shadow-gold-glow hover:shadow-gold-glow-lg transition-all flex items-center gap-1.5 transform hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
+            className="px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 hover:from-purple-700 hover:to-pink-600 text-white font-bold text-xs xl:text-sm shadow-[0_4px_18px_rgba(124,58,237,0.25)] hover:shadow-[0_6px_22px_rgba(124,58,237,0.35)] transition-all flex items-center gap-1.5 transform hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
           >
             <span className="whitespace-nowrap">Get Visa Assistance</span>
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            className="p-2 rounded-lg bg-emerald-600/90 text-white text-xs flex items-center gap-1 font-semibold"
+            className="p-2 rounded-lg bg-emerald-500 text-white text-xs flex items-center gap-1 font-semibold shadow-sm"
           >
             <MessageSquare className="w-3.5 h-3.5" />
             <span className="hidden sm:inline">WhatsApp</span>
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 text-slate-300 hover:text-gold-400 bg-navy-card/80 border border-slate-700/60 rounded-xl"
+            className="p-2.5 text-slate-700 hover:text-purple-700 bg-white/90 border border-slate-200 rounded-xl shadow-sm"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -111,26 +111,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-navy-900/98 backdrop-blur-xl border-b border-gold-500/30 px-4 pt-4 pb-6 space-y-4 animate-fadeIn shadow-2xl">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-b border-purple-100 px-4 pt-4 pb-6 space-y-4 animate-fadeIn shadow-xl">
           <div className="flex flex-col space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-sm font-medium text-slate-200 hover:text-gold-400 hover:bg-slate-800/50 rounded-lg transition-colors"
+                className="px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-purple-700 hover:bg-purple-50 rounded-lg transition-colors"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          <div className="pt-4 border-t border-slate-800 space-y-3">
+          <div className="pt-4 border-t border-slate-100 space-y-3">
             <a
               href={`tel:${DISPLAY_PHONE}`}
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-navy-card border border-gold-500/30 text-white font-mono font-semibold text-sm"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 font-mono font-semibold text-sm"
             >
-              <PhoneCall className="w-4 h-4 text-gold-400" />
+              <PhoneCall className="w-4 h-4 text-purple-600" />
               Call / WhatsApp: {DISPLAY_PHONE}
             </a>
 
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
                 setMobileMenuOpen(false);
                 onOpenModal();
               }}
-              className="w-full py-3 rounded-xl bg-gold-gradient text-navy-950 font-bold text-sm shadow-gold-glow flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
             >
               <span>Get Visa Assistance</span>
               <ArrowRight className="w-4 h-4" />

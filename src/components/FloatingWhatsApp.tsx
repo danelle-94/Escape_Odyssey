@@ -10,18 +10,18 @@ export const FloatingWhatsApp: React.FC = () => {
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
       {/* Optional Interactive Tooltip Bubble */}
       {tooltipVisible && (
-        <div className="bg-navy-950/95 text-white border border-gold-500/40 p-3 rounded-2xl shadow-gold-glow-lg max-w-xs text-xs animate-fadeIn relative">
+        <div className="bg-white/95 text-slate-800 border border-purple-200 p-3.5 rounded-2xl shadow-[0_10px_30px_rgba(139,92,246,0.15)] max-w-xs text-xs animate-fadeIn relative backdrop-blur-md">
           <button
             onClick={() => setTooltipVisible(false)}
-            className="absolute top-1.5 right-1.5 p-1 text-slate-400 hover:text-white"
+            className="absolute top-1.5 right-1.5 p-1 text-slate-400 hover:text-slate-700"
           >
-            <X className="w-3 h-3" />
+            <X className="w-3.5 h-3.5" />
           </button>
           <div className="flex items-center gap-2 mb-1">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-            <span className="font-bold text-gold-400">Visa Expert Online</span>
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            <span className="font-bold text-purple-900">Visa Expert Online</span>
           </div>
-          <p className="text-slate-300 text-[11px]">
+          <p className="text-slate-600 text-[11px] font-medium">
             Need fast visa assistance? Chat with Escape Odyssey team on WhatsApp.
           </p>
         </div>
@@ -42,7 +42,7 @@ export const FloatingWhatsApp: React.FC = () => {
         <span className="absolute inset-0 rounded-full bg-emerald-500/50 animate-ping pointer-events-none" style={{ animationDuration: '3s' }} />
 
         {/* Hover Label */}
-        <span className="absolute right-16 px-3 py-1.5 rounded-xl bg-navy-950 text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-gold-500/30 shadow-md">
+        <span className="absolute right-16 px-3 py-1.5 rounded-xl bg-white text-slate-900 text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-purple-200 shadow-md">
           Chat: {DISPLAY_PHONE}
         </span>
       </a>

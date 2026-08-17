@@ -14,10 +14,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
   };
 
   return (
-    <footer className="bg-navy-950 text-slate-300 border-t border-gold-500/20 relative z-20 overflow-hidden">
+    <footer className="bg-white text-slate-700 border-t border-purple-100 relative z-20 overflow-hidden">
       
-      {/* Top Gold Line Accent */}
-      <div className="h-1 w-full bg-gold-gradient" />
+      {/* Top Gradient Line Accent */}
+      <div className="h-1 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
@@ -25,10 +25,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
           {/* Brand Identity Column (Cols 1-4) */}
           <div className="lg:col-span-4 space-y-5">
             <BrandLogo size="lg" />
-            <p className="text-gold-gradient font-script text-2xl">
+            <p className="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-600 bg-clip-text text-transparent font-script text-2xl font-normal">
               Visa Made Easy. Journeys Made Possible.
             </p>
-            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-slate-600 leading-relaxed max-w-sm font-medium">
               Escape Odyssey Travel & Tours provides professional tourist, business and family visa assistance with documentation support, appointment assistance and dedicated visa follow-up.
             </p>
 
@@ -36,9 +36,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
             <div className="pt-2">
               <a
                 href={`tel:${DISPLAY_PHONE}`}
-                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl bg-navy-card border border-gold-500/30 text-white font-mono text-xs hover:border-gold-500 transition-colors"
+                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 font-mono text-xs hover:border-purple-400 transition-colors shadow-sm font-bold"
               >
-                <PhoneCall className="w-4 h-4 text-gold-400" />
+                <PhoneCall className="w-4 h-4 text-purple-600" />
                 <span>Call / WhatsApp: {DISPLAY_PHONE}</span>
               </a>
             </div>
@@ -46,51 +46,51 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
 
           {/* Quick Links Column (Cols 5-7) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-white font-cinzel uppercase tracking-wider text-gold-400">
+            <h4 className="text-sm font-bold text-purple-900 font-cinzel uppercase tracking-wider">
               Quick Links
             </h4>
-            <ul className="space-y-2.5 text-xs">
-              <li><a href="#home" className="hover:text-gold-300 transition-colors">Home</a></li>
-              <li><a href="#services" className="hover:text-gold-300 transition-colors">Visa Services</a></li>
-              <li><a href="#destinations" className="hover:text-gold-300 transition-colors">Popular Destinations</a></li>
-              <li><a href="#why-us" className="hover:text-gold-300 transition-colors">Why Choose Us</a></li>
-              <li><a href="#contact" className="hover:text-gold-300 transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-gold-300 transition-colors text-slate-500">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-gold-300 transition-colors text-slate-500">Terms & Conditions</a></li>
+            <ul className="space-y-2.5 text-xs font-medium">
+              <li><a href="#home" className="text-slate-600 hover:text-purple-700 transition-colors">Home</a></li>
+              <li><a href="#services" className="text-slate-600 hover:text-purple-700 transition-colors">Visa Services</a></li>
+              <li><a href="#destinations" className="text-slate-600 hover:text-purple-700 transition-colors">Popular Destinations</a></li>
+              <li><a href="#why-us" className="text-slate-600 hover:text-purple-700 transition-colors">Why Choose Us</a></li>
+              <li><a href="#contact" className="text-slate-600 hover:text-purple-700 transition-colors">Contact Us</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-purple-700 transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-purple-700 transition-colors">Terms & Conditions</a></li>
             </ul>
           </div>
 
           {/* Visa Services Column (Cols 8-10) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-white font-cinzel uppercase tracking-wider text-gold-400">
+            <h4 className="text-sm font-bold text-purple-900 font-cinzel uppercase tracking-wider">
               Visa Offerings
             </h4>
-            <ul className="space-y-2.5 text-xs text-slate-300">
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Tourist Visa Assistance</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Business Visa Expedited</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Family Visit Visa</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Cover Letter & Itinerary Preparation</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> VFS / TLS Slot Booking Support</li>
-              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gold-400" /> Application Tracking & Follow-Up</li>
+            <ul className="space-y-2.5 text-xs text-slate-600 font-medium">
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Tourist Visa Assistance</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Business Visa Expedited</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Family Visit Visa</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Cover Letter & Itinerary Preparation</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> VFS / TLS Slot Booking Support</li>
+              <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Application Tracking & Follow-Up</li>
             </ul>
           </div>
 
-          {/* Office Placeholders & Socials (Cols 11-12) */}
+          {/* Office & Socials (Cols 11-12) */}
           <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-sm font-bold text-white font-cinzel uppercase tracking-wider text-gold-400">
+            <h4 className="text-sm font-bold text-purple-900 font-cinzel uppercase tracking-wider">
               Connect With Us
             </h4>
-            <div className="space-y-2 text-xs">
-              <a href={`mailto:${BUSINESS_EMAIL}`} className="flex items-center gap-2 text-slate-400 hover:text-gold-300 transition-colors">
-                <Mail className="w-3.5 h-3.5 text-gold-400 flex-shrink-0" />
+            <div className="space-y-2 text-xs font-medium">
+              <a href={`mailto:${BUSINESS_EMAIL}`} className="flex items-center gap-2 text-slate-600 hover:text-purple-700 transition-colors">
+                <Mail className="w-3.5 h-3.5 text-purple-600 flex-shrink-0" />
                 <span className="truncate">{BUSINESS_EMAIL}</span>
               </a>
-              <div className="flex items-center gap-2 text-slate-400">
-                <MapPin className="w-3.5 h-3.5 text-gold-400" /> [Office Address]
+              <div className="flex items-center gap-2 text-slate-600">
+                <MapPin className="w-3.5 h-3.5 text-purple-600" /> [Office Address]
               </div>
             </div>
 
-            {/* Social Placeholders */}
+            {/* Social Links */}
             <div className="pt-2 flex items-center gap-2">
               {['FB', 'IG', 'LN', 'WA'].map((platform) => (
                 <a
@@ -98,7 +98,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
                   href={platform === 'WA' ? WHATSAPP_LINK : '#'}
                   target={platform === 'WA' ? '_blank' : '_self'}
                   rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg bg-navy-card border border-slate-700 hover:border-gold-400 text-slate-300 hover:text-gold-400 flex items-center justify-center text-[10px] font-bold transition-colors"
+                  className="w-8 h-8 rounded-lg bg-purple-50 border border-purple-200 hover:bg-purple-600 hover:text-white text-purple-900 flex items-center justify-center text-[10px] font-bold transition-all shadow-sm"
                 >
                   {platform}
                 </a>
@@ -107,20 +107,20 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
 
             <button
               onClick={scrollToTop}
-              className="mt-4 p-2.5 rounded-xl bg-navy-card border border-gold-500/30 hover:border-gold-500 text-gold-400 flex items-center gap-2 text-xs font-semibold transition-colors"
+              className="mt-4 p-2.5 rounded-xl bg-purple-50 border border-purple-200 hover:border-purple-400 text-purple-900 flex items-center gap-2 text-xs font-bold transition-colors shadow-sm"
             >
-              <ArrowUp className="w-4 h-4" /> Top of Page
+              <ArrowUp className="w-4 h-4 text-purple-600" /> Top of Page
             </button>
           </div>
 
         </div>
 
         {/* Bottom Copyright & Privacy Notice */}
-        <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
-          <div className="space-y-1 text-center sm:text-left">
+        <div className="mt-12 pt-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+          <div className="space-y-1 text-center sm:text-left font-medium">
             <p>© 2026 Escape Odyssey Travel & Tours. All Rights Reserved.</p>
             <p className="text-[10px] text-slate-400">
-              🔒 Privacy Policy Notice: Escape Odyssey uses anonymous browser fingerprinting (<code className="text-gold-400 font-mono">@fingerprintjs/fingerprintjs</code>) to prevent form abuse, optimize visitor journeys, and attach session metrics to visa inquiries.
+              🔒 Privacy Policy Notice: Escape Odyssey uses anonymous browser fingerprinting (<code className="text-purple-700 font-mono">@fingerprintjs/fingerprintjs</code>) to prevent form abuse, optimize visitor journeys, and attach session metrics to visa inquiries.
             </p>
           </div>
 
@@ -131,15 +131,15 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
                   trackVisitorEvent('page_view');
                   onOpenAdminDrawer();
                 }}
-                className="px-3 py-1.5 rounded-lg bg-navy-card border border-gold-500/30 text-gold-300 hover:text-white text-[11px] font-medium flex items-center gap-1.5 transition-colors"
+                className="px-3 py-1.5 rounded-lg bg-purple-50 border border-purple-200 text-purple-900 hover:bg-purple-100 text-[11px] font-bold flex items-center gap-1.5 transition-colors shadow-sm"
                 title="View FingerprintJS Visitor ID & Session Log"
               >
-                <Fingerprint className="w-3.5 h-3.5" /> FingerprintJS Portal
+                <Fingerprint className="w-3.5 h-3.5 text-purple-600" /> FingerprintJS Portal
               </button>
             )}
 
-            <p className="flex items-center gap-1.5 text-slate-400">
-              <ShieldCheck className="w-4 h-4 text-gold-400" /> Licensed Travel & Visa Consultancy
+            <p className="flex items-center gap-1.5 text-slate-600 font-semibold">
+              <ShieldCheck className="w-4 h-4 text-emerald-500" /> Licensed Travel & Visa Consultancy
             </p>
           </div>
         </div>

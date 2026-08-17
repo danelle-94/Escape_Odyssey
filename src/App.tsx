@@ -47,7 +47,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-navy-950 text-slate-100 font-sans selection:bg-gold-500/30 selection:text-gold-300 relative">
+    <div className="min-h-screen bg-[#FAF9F5] text-slate-800 font-sans selection:bg-purple-200 selection:text-purple-900 relative">
       
       {/* Sticky Header Navigation */}
       <Navbar onOpenModal={handleOpenModal} />
