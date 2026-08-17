@@ -50,7 +50,7 @@ export const ContactSection: React.FC = () => {
       `• Travel Date: ${formData.travelDate || 'Flexible'}\n` +
       `• Notes: ${formData.message || 'None'}`
     );
-    window.open(`https://wa.me/918796815817?text=${text}`, '_blank');
+    window.open(`https://wa.me/918587992757?text=${text}`, '_blank');
   };
 
   return (
@@ -200,7 +200,7 @@ export const ContactSection: React.FC = () => {
                     <input
                       type="tel"
                       required
-                      placeholder="+91 8796815817"
+                      placeholder="+91 8587992757"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"

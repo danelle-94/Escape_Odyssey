@@ -1,5 +1,5 @@
 import React from 'react';
-import { FEATURES } from '../data/websiteData';
+import { FEATURES, WHATSAPP_LINK } from '../data/websiteData';
 import { UserCheck, Zap, ShieldCheck, Globe, Eye, Headphones } from 'lucide-react';
 
 export const WhyChooseUs: React.FC = () => {
@@ -66,7 +66,7 @@ export const WhyChooseUs: React.FC = () => {
             <p className="text-xs text-slate-600 font-medium">Speak directly with our senior documentation specialists.</p>
           </div>
           <a
-            href="https://wa.me/918796815817?text=Hello%20Escape%20Odyssey%2C%20I%20have%20a%20specific%20visa%20question."
+            href={WHATSAPP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="px-6 py-3 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex-shrink-0"

@@ -33,7 +33,7 @@ const FAQS: FAQItem[] = [
   {
     category: 'Contact & Process',
     question: 'How do I start my visa application with Escape Odyssey?',
-    answer: 'Starting is quick and easy! Simply call or WhatsApp us at +91 8796815817, or fill out our online visa inquiry form. Our dedicated visa consultant will review your profile, provide a customized document checklist, and guide you step-by-step.'
+    answer: 'Starting is quick and easy! Simply call or WhatsApp us at +91 8587992757, or fill out our online visa inquiry form. Our dedicated visa consultant will review your profile, provide a customized document checklist, and guide you step-by-step.'
   }
 ];
 
