@@ -10,7 +10,8 @@ import {
   Lock,
   Search,
   Clock,
-  Phone
+  Phone,
+  LogOut
 } from 'lucide-react';
 import {
   fetchAdminStats,
@@ -99,13 +100,25 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose 
 
           <div className="flex items-center gap-2">
             {authenticated && (
-              <button
-                onClick={loadData}
-                disabled={loading}
-                className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-semibold flex items-center gap-1.5 transition-colors border border-white/20"
-              >
-                <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} /> Refresh Data
-              </button>
+              <>
+                <button
+                  onClick={loadData}
+                  disabled={loading}
+                  className="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs font-semibold flex items-center gap-1.5 transition-colors border border-white/20"
+                >
+                  <RefreshCw className={`w-3.5 h-3.5 ${loading ? 'animate-spin' : ''}`} /> Refresh Data
+                </button>
+                <button
+                  onClick={() => {
+                    setAuthenticated(false);
+                    setPinInput('');
+                  }}
+                  className="px-3 py-1.5 rounded-lg bg-rose-500/80 hover:bg-rose-600 text-white text-xs font-semibold flex items-center gap-1.5 transition-colors shadow-sm"
+                  title="Log out of Admin Control Center"
+                >
+                  <LogOut className="w-3.5 h-3.5" /> Logout
+                </button>
+              </>
             )}
             <button
               onClick={onClose}
@@ -414,7 +427,18 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose 
             {/* Footer Notice */}
             <div className="p-3 bg-white border-t border-slate-200 text-center text-slate-400 text-[11px] flex items-center justify-between px-6 flex-shrink-0 font-medium">
               <span>Escape Odyssey SQLite Persistence Engine</span>
-              <span>🔒 Private Owner Access Only</span>
+              <div className="flex items-center gap-4">
+                <span>🔒 Private Owner Access</span>
+                <button
+                  onClick={() => {
+                    setAuthenticated(false);
+                    setPinInput('');
+                  }}
+                  className="text-rose-600 hover:text-rose-700 font-bold flex items-center gap-1 hover:underline transition-colors"
+                >
+                  <LogOut className="w-3 h-3" /> Log out
+                </button>
+              </div>
             </div>
 
           </div>
