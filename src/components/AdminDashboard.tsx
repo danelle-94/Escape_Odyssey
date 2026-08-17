@@ -40,7 +40,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose 
   const [searchTerm, setSearchTerm] = useState('');
 
   // Passcode from env variable (VITE_ADMIN_PASSCODE) or default '1234'
-  const ADMIN_PASSCODE = (import.meta as any).env?.VITE_ADMIN_PASSCODE || '1234';
+  const ADMIN_PASSCODE = (import.meta as any).env?.VITE_ADMIN_PASSCODE || 'Daniel@123';
 
   const loadData = async () => {
     setLoading(true);
