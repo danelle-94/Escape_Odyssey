@@ -83,12 +83,12 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
       <div className="relative w-full max-w-xl bg-white border border-purple-200 rounded-2xl shadow-[0_20px_50px_rgba(124,58,237,0.15)] overflow-hidden text-slate-800">
         
         {/* Top Gradient Border Accent */}
-        <div className="h-1.5 w-full bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500" />
+        <div className="h-1.5 w-full bg-[#0074B5]" />
 
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50/80">
           <div>
-            <span className="text-[11px] font-bold tracking-widest text-purple-800 uppercase">
+            <span className="text-[11px] font-bold tracking-widest text-[#0074B5] uppercase">
               EXPERT CONSULTATION
             </span>
             <h3 className="text-xl font-bold text-slate-900 font-cinzel">
@@ -253,7 +253,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 hover:from-purple-700 hover:to-pink-600 text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="flex-1 py-3 px-6 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all"
                 >
                   <Send className="w-4 h-4" /> Request Visa Guidance
                 </button>

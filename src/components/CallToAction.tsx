@@ -10,7 +10,7 @@ export const CallToAction: React.FC = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-100/50 via-[#FAF9F5] to-[#FAF9F5] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 p-8 sm:p-12 lg:p-16 text-center space-y-8 shadow-[0_15px_45px_rgba(124,58,237,0.25)] relative overflow-hidden text-white">
+        <div className="rounded-3xl bg-[#0074B5] p-8 sm:p-12 lg:p-16 text-center space-y-8 shadow-[0_15px_45px_rgba(0,116,181,0.25)] relative overflow-hidden text-white">
           
           {/* Decorative Corner Accents */}
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-br-full pointer-events-none" />
@@ -18,7 +18,7 @@ export const CallToAction: React.FC = () => {
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/30 shadow-sm">
-            <Sparkles className="w-4 h-4 text-amber-200" />
+            <Sparkles className="w-4 h-4 text-sky-200" />
             <span className="text-xs font-bold text-white uppercase tracking-widest">
               IMMEDIATE VISA CONSULTATION
             </span>
@@ -30,7 +30,7 @@ export const CallToAction: React.FC = () => {
           </h2>
 
           {/* Subtext */}
-          <p className="text-purple-50 text-base sm:text-xl max-w-2xl mx-auto font-medium">
+          <p className="text-sky-100 text-base sm:text-xl max-w-2xl mx-auto font-medium">
             Let our experts make your visa process simple, clear and stress-free.
           </p>
 
@@ -52,9 +52,9 @@ export const CallToAction: React.FC = () => {
             {/* Direct Call Button */}
             <a
               href={`tel:${DISPLAY_PHONE}`}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-purple-50 text-purple-900 font-extrabold text-base shadow-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-sky-50 text-[#0074B5] font-extrabold text-base shadow-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
-              <PhoneCall className="w-5 h-5 text-purple-700" />
+              <PhoneCall className="w-5 h-5 text-[#0074B5]" />
               <span>Call {DISPLAY_PHONE}</span>
             </a>
 

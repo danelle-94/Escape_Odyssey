@@ -17,7 +17,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
     <footer className="bg-white text-slate-700 border-t border-purple-100 relative z-20 overflow-hidden">
       
       {/* Top Gradient Line Accent */}
-      <div className="h-1 w-full bg-gradient-to-r from-purple-500 via-pink-500 to-amber-500" />
+      <div className="h-1 w-full bg-[#0074B5]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
           {/* Brand Identity Column (Cols 1-4) */}
           <div className="lg:col-span-4 space-y-5">
             <BrandLogo size="lg" />
-            <p className="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-600 bg-clip-text text-transparent font-script text-2xl font-normal">
+            <p className="text-[#0074B5] font-script text-2xl font-normal">
               Visa Made Easy. Journeys Made Possible.
             </p>
             <p className="text-xs text-slate-600 leading-relaxed max-w-sm font-medium">
@@ -36,9 +36,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
             <div className="pt-2">
               <a
                 href={`tel:${DISPLAY_PHONE}`}
-                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 font-mono text-xs hover:border-purple-400 transition-colors shadow-sm font-bold"
+                className="inline-flex items-center gap-3 px-4 py-2.5 rounded-xl bg-blue-50 border border-blue-200 text-[#0074B5] font-mono text-xs hover:border-blue-400 transition-colors shadow-sm font-bold"
               >
-                <PhoneCall className="w-4 h-4 text-purple-600" />
+                <PhoneCall className="w-4 h-4 text-[#0074B5]" />
                 <span>Call / WhatsApp: {DISPLAY_PHONE}</span>
               </a>
             </div>
@@ -46,17 +46,17 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
 
           {/* Quick Links Column (Cols 5-7) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-sm font-bold text-purple-900 font-cinzel uppercase tracking-wider">
+            <h4 className="text-sm font-bold text-blue-900 font-cinzel uppercase tracking-wider">
               Quick Links
             </h4>
             <ul className="space-y-2.5 text-xs font-medium">
-              <li><a href="#home" className="text-slate-600 hover:text-purple-700 transition-colors">Home</a></li>
-              <li><a href="#services" className="text-slate-600 hover:text-purple-700 transition-colors">Visa Services</a></li>
-              <li><a href="#destinations" className="text-slate-600 hover:text-purple-700 transition-colors">Popular Destinations</a></li>
-              <li><a href="#why-us" className="text-slate-600 hover:text-purple-700 transition-colors">Why Choose Us</a></li>
-              <li><a href="#contact" className="text-slate-600 hover:text-purple-700 transition-colors">Contact Us</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-purple-700 transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="text-slate-400 hover:text-purple-700 transition-colors">Terms & Conditions</a></li>
+              <li><a href="#home" className="text-slate-600 hover:text-[#0074B5] transition-colors">Home</a></li>
+              <li><a href="#services" className="text-slate-600 hover:text-[#0074B5] transition-colors">Visa Services</a></li>
+              <li><a href="#destinations" className="text-slate-600 hover:text-[#0074B5] transition-colors">Popular Destinations</a></li>
+              <li><a href="#why-us" className="text-slate-600 hover:text-[#0074B5] transition-colors">Why Choose Us</a></li>
+              <li><a href="#contact" className="text-slate-600 hover:text-[#0074B5] transition-colors">Contact Us</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-[#0074B5] transition-colors">Privacy Policy</a></li>
+              <li><a href="#" className="text-slate-400 hover:text-[#0074B5] transition-colors">Terms & Conditions</a></li>
             </ul>
           </div>
 

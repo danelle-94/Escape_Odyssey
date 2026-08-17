@@ -280,7 +280,7 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-pink-500 to-amber-500 hover:from-purple-700 hover:to-pink-600 text-white font-extrabold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-extrabold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
                 >
                   <Send className="w-4 h-4" /> Request Visa Assistance
                 </button>

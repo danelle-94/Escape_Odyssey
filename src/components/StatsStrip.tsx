@@ -37,16 +37,16 @@ export const StatsStrip: React.FC = () => {
           return (
             <div 
               key={idx} 
-              className={`flex items-start gap-4 p-3 rounded-xl transition-all hover:bg-purple-50/60 ${
+              className={`flex items-start gap-4 p-3 rounded-xl transition-all hover:bg-blue-50/60 ${
                 idx !== stats.length - 1 ? 'lg:border-r lg:border-slate-100' : ''
               }`}
             >
-              <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0 shadow-sm">
+              <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#0074B5] flex-shrink-0 shadow-sm">
                 <Icon className="w-6 h-6" />
               </div>
               <div className="space-y-0.5">
                 <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 font-cinzel tracking-tight">
-                  <span className="bg-gradient-to-r from-purple-700 via-pink-600 to-amber-600 bg-clip-text text-transparent">{stat.number}</span>
+                  <span className="text-[#0074B5]">{stat.number}</span>
                 </div>
                 <div className="text-sm font-bold text-slate-800">{stat.label}</div>
                 <div className="text-xs text-slate-500 font-medium">{stat.subtext}</div>
