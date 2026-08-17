@@ -1,14 +1,9 @@
 import React from 'react';
 import { BrandLogo } from './BrandLogo';
-import { PhoneCall, ArrowUp, ShieldCheck, Mail, MapPin, Fingerprint } from 'lucide-react';
+import { PhoneCall, ArrowUp, ShieldCheck, Mail, MapPin } from 'lucide-react';
 import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK } from '../data/websiteData';
-import { trackVisitorEvent } from '../lib/analytics';
 
-interface FooterProps {
-  onOpenAdminDrawer?: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
+export const Footer: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -120,24 +115,11 @@ export const Footer: React.FC<FooterProps> = ({ onOpenAdminDrawer }) => {
           <div className="space-y-1 text-center sm:text-left font-medium">
             <p>© 2026 Escape Odyssey Travel & Tours. All Rights Reserved.</p>
             <p className="text-[10px] text-slate-400">
-              🔒 Privacy Policy Notice: Escape Odyssey uses anonymous browser fingerprinting (<code className="text-[#015da5] font-mono">@fingerprintjs/fingerprintjs</code>) to prevent form abuse, optimize visitor journeys, and attach session metrics to visa inquiries.
+              🔒 Confidential & Secure Application Processing. All personal details are protected under standard privacy standards.
             </p>
           </div>
 
           <div className="flex items-center gap-3 flex-shrink-0">
-            {onOpenAdminDrawer && (
-              <button
-                onClick={() => {
-                  trackVisitorEvent('page_view');
-                  onOpenAdminDrawer();
-                }}
-                className="px-3 py-1.5 rounded-lg bg-blue-50 border border-blue-200 text-[#015da5] hover:bg-blue-100 text-[11px] font-bold flex items-center gap-1.5 transition-colors shadow-sm"
-                title="View FingerprintJS Visitor ID & Session Log"
-              >
-                <Fingerprint className="w-3.5 h-3.5 text-[#015da5]" /> FingerprintJS Portal
-              </button>
-            )}
-
             <p className="flex items-center gap-1.5 text-slate-600 font-semibold">
               <ShieldCheck className="w-4 h-4 text-emerald-500" /> Licensed Travel & Visa Consultancy
             </p>

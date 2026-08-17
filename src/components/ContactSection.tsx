@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { PhoneCall, Mail, MapPin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK } from '../data/websiteData';
-import { trackVisitorEvent } from '../lib/analytics';
-import { getVisitorId } from '../lib/fingerprint';
+import { trackVisitorEvent, submitInquiryToDb } from '../lib/analytics';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -19,19 +18,20 @@ export const ContactSection: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const visitorId = await getVisitorId();
 
-    trackVisitorEvent('contact_form_submitted', {
-      visaType: formData.visaType,
-      destination: formData.destination,
-      meta: {
-        visitorId,
+    try {
+      await submitInquiryToDb({
         fullName: formData.fullName,
         phone: formData.phone,
         email: formData.email,
+        destination: formData.destination,
+        visaType: formData.visaType,
         travelDate: formData.travelDate,
-      }
-    });
+        notes: formData.message,
+      });
+    } catch (err) {
+      console.warn('[DB Submit] Contact form backend save error:', err);
+    }
 
     setSubmitted(true);
   };

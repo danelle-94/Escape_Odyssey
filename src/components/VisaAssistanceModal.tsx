@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { X, Send, PhoneCall, CheckCircle2, Globe, Calendar, User, Mail, ShieldCheck } from 'lucide-react';
 import { DISPLAY_PHONE } from '../data/websiteData';
-import { trackVisitorEvent } from '../lib/analytics';
-import { getVisitorId } from '../lib/fingerprint';
+import { trackVisitorEvent, submitInquiryToDb } from '../lib/analytics';
 
 interface VisaAssistanceModalProps {
   isOpen: boolean;
@@ -28,7 +27,6 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
   });
 
   const [submitted, setSubmitted] = useState(false);
-  const [visitorId, setVisitorId] = useState<string | null>(null);
 
   React.useEffect(() => {
     if (isOpen) {
@@ -36,7 +34,6 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
         visaType: formData.visaType,
         destination: formData.destination,
       });
-      getVisitorId().then(setVisitorId);
     }
   }, [isOpen]);
 
@@ -44,20 +41,21 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const currentVId = visitorId || (await getVisitorId());
     
-    // Track visa enquiry submission with attached visitorId
-    trackVisitorEvent('visa_enquiry_submitted', {
-      visaType: formData.visaType,
-      destination: formData.destination,
-      meta: {
-        visitorId: currentVId,
+    // Save inquiry to backend SQLite DB
+    try {
+      await submitInquiryToDb({
         fullName: formData.fullName,
         phone: formData.phone,
         email: formData.email,
+        destination: formData.destination,
+        visaType: formData.visaType,
         travelDate: formData.travelDate,
-      }
-    });
+        notes: formData.notes,
+      });
+    } catch (err) {
+      console.warn('[DB Submit] Backend call error, falling back locally', err);
+    }
 
     setSubmitted(true);
   };

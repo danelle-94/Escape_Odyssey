@@ -13,7 +13,7 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { VisaAssistanceModal } from './components/VisaAssistanceModal';
-import { AdminVisitorDrawer } from './components/AdminVisitorDrawer';
+import { AdminDashboard } from './components/AdminDashboard';
 import { trackVisitorEvent } from './lib/analytics';
 
 export function App() {
@@ -27,11 +27,28 @@ export function App() {
     destination: 'Schengen Area',
   });
 
-  const [isAdminDrawerOpen, setIsAdminDrawerOpen] = useState(false);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
 
-  // Track initial page_view event on mount
+  // Track initial silent page_view event on mount & setup secret shortcut (Ctrl+Shift+A or ?admin=true)
   useEffect(() => {
     trackVisitorEvent('page_view');
+
+    // Secret URL query parameter trigger: ?admin=true
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('admin') === 'true') {
+      setIsAdminOpen(true);
+    }
+
+    // Secret shortcut listener for website owner: Ctrl + Shift + A
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === 'A' || e.key === 'a')) {
+        e.preventDefault();
+        setIsAdminOpen((prev) => !prev);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   const handleOpenModal = (visaType?: string, destination?: string) => {
@@ -86,7 +103,7 @@ export function App() {
       </main>
 
       {/* Footer */}
-      <Footer onOpenAdminDrawer={() => setIsAdminDrawerOpen(true)} />
+      <Footer />
 
       {/* Floating WhatsApp Action Button */}
       <FloatingWhatsApp />
@@ -99,10 +116,10 @@ export function App() {
         defaultDestination={modalState.destination}
       />
 
-      {/* Admin / Developer FingerprintJS Visitor Journey Inspection Drawer */}
-      <AdminVisitorDrawer
-        isOpen={isAdminDrawerOpen}
-        onClose={() => setIsAdminDrawerOpen(false)}
+      {/* Private Owner Admin Control Center & DB Viewer (Trigger: Ctrl+Shift+A or ?admin=true) */}
+      <AdminDashboard
+        isOpen={isAdminOpen}
+        onClose={() => setIsAdminOpen(false)}
       />
 
     </div>
