@@ -39,8 +39,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ isOpen, onClose 
   const [currentVisitorId, setCurrentVisitorId] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Default Passcode: 1234 (Owner can change)
-  const ADMIN_PASSCODE = '1234';
+  // Passcode from env variable (VITE_ADMIN_PASSCODE) or default '1234'
+  const ADMIN_PASSCODE = (import.meta as any).env?.VITE_ADMIN_PASSCODE || '1234';
 
   const loadData = async () => {
     setLoading(true);
