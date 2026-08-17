@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrandLogo } from './BrandLogo';
 import { PhoneCall, ArrowUp, ShieldCheck, Mail, MapPin } from 'lucide-react';
-import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK } from '../data/websiteData';
+import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK, FACEBOOK_LINK, INSTAGRAM_LINK } from '../data/websiteData';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -87,15 +87,20 @@ export const Footer: React.FC = () => {
 
             {/* Social Links */}
             <div className="pt-2 flex items-center gap-2">
-              {['FB', 'IG', 'LN', 'WA'].map((platform) => (
+              {[
+                { label: 'FB', href: FACEBOOK_LINK, title: 'Facebook' },
+                { label: 'IG', href: INSTAGRAM_LINK, title: 'Instagram' },
+                { label: 'WA', href: WHATSAPP_LINK, title: 'WhatsApp' },
+              ].map((social) => (
                 <a
-                  key={platform}
-                  href={platform === 'WA' ? WHATSAPP_LINK : '#'}
-                  target={platform === 'WA' ? '_blank' : '_self'}
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
                   rel="noopener noreferrer"
+                  title={social.title}
                   className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200 hover:bg-[#015da5] hover:text-white text-[#015da5] flex items-center justify-center text-[10px] font-bold transition-all shadow-sm"
                 >
-                  {platform}
+                  {social.label}
                 </a>
               ))}
             </div>

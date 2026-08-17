@@ -4,6 +4,8 @@ export const PHONE_NUMBER = "+91 8796815817";
 export const DISPLAY_PHONE = "+91 8796815817";
 export const BUSINESS_EMAIL = "visaescapeodyssey@gmail.com";
 export const WHATSAPP_LINK = "https://wa.me/918796815817?text=Hello%20Escape%20Odyssey%20Travel%20%26%20Tours%2C%20I%20would%20like%20assistance%20with%20my%20visa%20application.";
+export const FACEBOOK_LINK = "https://www.facebook.com/escapeodysseytravel/";
+export const INSTAGRAM_LINK = "https://www.instagram.com/escapeodysseytravel";
 
 export const VISA_SERVICES: VisaService[] = [
   {
