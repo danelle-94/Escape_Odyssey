@@ -73,7 +73,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
       `• Travel Date: ${formData.travelDate || 'Flexible'}\n` +
       `• Phone: ${formData.phone}`
     );
-    window.open(`https://wa.me/918587992757?text=${text}`, '_blank');
+    window.open(`https://wa.me/918796815817?text=${text}`, '_blank');
   };
 
   return (
