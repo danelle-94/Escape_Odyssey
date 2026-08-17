@@ -12,13 +12,13 @@ export const VisaServices: React.FC<VisaServicesProps> = ({ onOpenModal }) => {
   const getIcon = (type: VisaService['iconName']) => {
     switch (type) {
       case 'Tourist':
-        return <Luggage className="w-8 h-8 text-purple-600" />;
+        return <Luggage className="w-8 h-8 text-[#015da5]" />;
       case 'Business':
-        return <Briefcase className="w-8 h-8 text-purple-600" />;
+        return <Briefcase className="w-8 h-8 text-[#015da5]" />;
       case 'Family':
-        return <Users className="w-8 h-8 text-purple-600" />;
+        return <Users className="w-8 h-8 text-[#015da5]" />;
       default:
-        return <Luggage className="w-8 h-8 text-purple-600" />;
+        return <Luggage className="w-8 h-8 text-[#015da5]" />;
     }
   };
 
@@ -26,23 +26,23 @@ export const VisaServices: React.FC<VisaServicesProps> = ({ onOpenModal }) => {
     <section id="services" className="py-24 relative bg-[#F8F6F0]">
       
       {/* Background Decorative Gradient Orbs */}
-      <div className="absolute top-1/3 left-0 w-96 h-96 bg-purple-100/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/3 left-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 right-0 w-96 h-96 bg-rose-100/50 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-purple-200 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-purple-500 animate-ping" />
-            <span className="text-xs font-bold text-purple-900 uppercase tracking-widest">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-blue-200 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#015da5] animate-ping" />
+            <span className="text-xs font-bold text-blue-900 uppercase tracking-widest">
               PRIMARY SPECIALIZATIONS
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-slate-900 font-cinzel">
             Our Visa Services
           </h2>
-          <p className="text-[#0074B5] text-xl sm:text-2xl font-script tracking-wide">
+          <p className="text-[#015da5] text-xl sm:text-2xl font-script tracking-wide">
             Your journey starts with the right visa.
           </p>
           <p className="text-slate-600 text-sm sm:text-base max-w-2xl mx-auto font-medium">
@@ -55,10 +55,10 @@ export const VisaServices: React.FC<VisaServicesProps> = ({ onOpenModal }) => {
           {VISA_SERVICES.map((service) => (
             <div
               key={service.id}
-              className="group relative bg-white rounded-2xl p-8 border border-purple-100 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,116,181,0.12)]"
+              className="group relative bg-white rounded-2xl p-8 border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between overflow-hidden shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(1,93,165,0.12)]"
             >
               {/* Card Top Accent Ribbon */}
-              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#0074B5] transition-all" />
+              <div className="absolute top-0 left-0 right-0 h-1.5 bg-[#015da5] transition-all" />
 
               <div>
                 {/* Header Badge & Icon */}
@@ -67,16 +67,16 @@ export const VisaServices: React.FC<VisaServicesProps> = ({ onOpenModal }) => {
                     {getIcon(service.iconName)}
                   </div>
 
-                  <span className="px-3 py-1 rounded-full bg-blue-50 text-[#0074B5] border border-blue-200 text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full bg-blue-50 text-[#015da5] border border-blue-200 text-xs font-semibold">
                     {service.badge}
                   </span>
                 </div>
 
                 {/* Service Titles */}
-                <h3 className="text-2xl font-bold text-slate-900 font-cinzel mb-2 group-hover:text-[#0074B5] transition-colors">
+                <h3 className="text-2xl font-bold text-slate-900 font-cinzel mb-2 group-hover:text-[#015da5] transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-xs font-bold text-[#0074B5] mb-4">
+                <p className="text-xs font-bold text-[#015da5] mb-4">
                   {service.subtitle}
                 </p>
                 <p className="text-slate-600 text-sm leading-relaxed mb-6 font-medium">
@@ -86,14 +86,14 @@ export const VisaServices: React.FC<VisaServicesProps> = ({ onOpenModal }) => {
                 {/* Key Metrics */}
                 <div className="grid grid-cols-2 gap-3 p-3.5 bg-blue-50/70 rounded-xl border border-blue-100 text-xs mb-6">
                   <div className="flex items-center gap-2">
-                    <Clock className="w-4 h-4 text-[#0074B5] flex-shrink-0" />
+                    <Clock className="w-4 h-4 text-[#015da5] flex-shrink-0" />
                     <div>
                       <div className="text-[10px] text-slate-500">Processing</div>
                       <div className="font-semibold text-slate-800">{service.processingTime}</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <ShieldAlert className="w-4 h-4 text-[#0074B5] flex-shrink-0" />
+                    <ShieldAlert className="w-4 h-4 text-[#015da5] flex-shrink-0" />
                     <div>
                       <div className="text-[10px] text-slate-500">Validity</div>
                       <div className="font-semibold text-slate-800">{service.validity}</div>
@@ -121,7 +121,7 @@ export const VisaServices: React.FC<VisaServicesProps> = ({ onOpenModal }) => {
                   trackVisitorEvent('visa_service_viewed', { visaType: service.title });
                   onOpenModal(service.title);
                 }}
-                className="w-full py-3.5 px-6 rounded-xl bg-blue-50 hover:bg-[#0074B5] text-[#0074B5] hover:text-white font-bold text-sm border border-blue-200 hover:border-transparent transition-all flex items-center justify-center gap-2 shadow-sm"
+                className="w-full py-3.5 px-6 rounded-xl bg-blue-50 hover:bg-[#015da5] text-[#015da5] hover:text-white font-bold text-sm border border-blue-200 hover:border-transparent transition-all flex items-center justify-center gap-2 shadow-sm"
               >
                 <span>Explore {service.title}</span>
                 <ArrowRight className="w-4 h-4" />

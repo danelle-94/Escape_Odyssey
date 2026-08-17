@@ -7,10 +7,10 @@ export const CallToAction: React.FC = () => {
     <section className="py-20 bg-[#FAF9F5] relative overflow-hidden">
       
       {/* Background Gradient & Light Flares */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-100/50 via-[#FAF9F5] to-[#FAF9F5] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-100/50 via-[#FAF9F5] to-[#FAF9F5] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="rounded-3xl bg-[#0074B5] p-8 sm:p-12 lg:p-16 text-center space-y-8 shadow-[0_15px_45px_rgba(0,116,181,0.25)] relative overflow-hidden text-white">
+        <div className="rounded-3xl bg-[#015da5] p-8 sm:p-12 lg:p-16 text-center space-y-8 shadow-[0_15px_45px_rgba(1,93,165,0.25)] relative overflow-hidden text-white">
           
           {/* Decorative Corner Accents */}
           <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-br-full pointer-events-none" />
@@ -52,15 +52,15 @@ export const CallToAction: React.FC = () => {
             {/* Direct Call Button */}
             <a
               href={`tel:${DISPLAY_PHONE}`}
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-sky-50 text-[#0074B5] font-extrabold text-base shadow-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-sky-50 text-[#015da5] font-extrabold text-base shadow-xl transition-all flex items-center justify-center gap-3 transform hover:-translate-y-1"
             >
-              <PhoneCall className="w-5 h-5 text-[#0074B5]" />
+              <PhoneCall className="w-5 h-5 text-[#015da5]" />
               <span>Call {DISPLAY_PHONE}</span>
             </a>
 
           </div>
 
-          <div className="pt-2 flex items-center justify-center gap-4 text-xs text-purple-100 font-medium">
+          <div className="pt-2 flex items-center justify-center gap-4 text-xs text-blue-100 font-medium">
             <span className="flex items-center gap-1">
               <ShieldCheck className="w-4 h-4 text-amber-200" /> Fast Response Guaranteed
             </span>

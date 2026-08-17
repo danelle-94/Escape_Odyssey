@@ -12,23 +12,23 @@
 
 @layer utilities {
   .text-gold-gradient {
-    color: #0074B5;
+    color: #015da5;
   }
 
   .text-pastel-gradient {
-    color: #0074B5;
+    color: #015da5;
   }
   
   .bg-gold-gradient {
-    background-color: #0074B5;
+    background-color: #015da5;
   }
 
   .bg-gold-gradient-hover {
-    background-color: #005C91;
+    background-color: #01477f;
   }
 
   .border-gold-gradient {
-    border-color: #0074B5;
+    border-color: #015da5;
   }
 
   .glass-navy {
@@ -36,7 +36,7 @@
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border: 1px solid rgba(226, 232, 240, 0.8);
-    box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.06);
+    box-shadow: 0 10px 30px -5px rgba(1, 93, 165, 0.06);
   }
 
   .glass-navy-hover {
@@ -44,8 +44,8 @@
   }
   .glass-navy-hover:hover {
     background: rgba(255, 255, 255, 0.98);
-    border-color: rgba(139, 92, 246, 0.35);
-    box-shadow: 0 14px 35px -5px rgba(124, 58, 237, 0.12), 0 0 20px rgba(244, 114, 182, 0.1);
+    border-color: rgba(1, 93, 165, 0.35);
+    box-shadow: 0 14px 35px -5px rgba(1, 93, 165, 0.12);
   }
 }
 

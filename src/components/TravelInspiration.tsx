@@ -61,7 +61,7 @@ export const TravelInspiration: React.FC<TravelInspirationProps> = () => {
           {ARTICLES.map((article) => (
             <article
               key={article.id}
-              className="group bg-white rounded-2xl overflow-hidden border border-purple-100 hover:border-purple-300 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,116,181,0.12)]"
+              className="group bg-white rounded-2xl overflow-hidden border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-2 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(1,93,165,0.12)]"
             >
               <div>
                 {/* Article Image Container */}
@@ -74,13 +74,13 @@ export const TravelInspiration: React.FC<TravelInspirationProps> = () => {
                   />
                   
                   {/* Category Tag */}
-                  <span className="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#0074B5] text-white border border-blue-300 shadow-sm">
+                  <span className="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#015da5] text-white border border-blue-300 shadow-sm">
                     {article.category}
                   </span>
 
                   {/* Read Time Tag */}
                   <span className="absolute bottom-3 right-3 text-[10px] font-semibold px-2.5 py-1 rounded-md bg-white/90 text-slate-800 border border-slate-200 backdrop-blur-md shadow-sm flex items-center gap-1">
-                    <Clock className="w-3 h-3 text-[#0074B5]" />
+                    <Clock className="w-3 h-3 text-[#015da5]" />
                     {article.readTime}
                   </span>
                 </div>
@@ -89,14 +89,14 @@ export const TravelInspiration: React.FC<TravelInspirationProps> = () => {
                 <div className="p-6 space-y-3">
                   <div className="flex items-center gap-3 text-[11px] text-slate-500 font-medium">
                     <span className="flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5 text-[#0074B5]" />
+                      <Calendar className="w-3.5 h-3.5 text-[#015da5]" />
                       {article.date}
                     </span>
                     <span>•</span>
                     <span>By {article.author}</span>
                   </div>
 
-                  <h3 className="text-lg font-bold text-slate-900 font-cinzel group-hover:text-[#0074B5] transition-colors leading-snug">
+                  <h3 className="text-lg font-bold text-slate-900 font-cinzel group-hover:text-[#015da5] transition-colors leading-snug">
                     {article.title}
                   </h3>
 
@@ -110,7 +110,7 @@ export const TravelInspiration: React.FC<TravelInspirationProps> = () => {
               <div className="p-6 pt-0">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0074B5] hover:text-[#005C91] transition-colors group/link"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#015da5] hover:text-[#01477f] transition-colors group/link"
                 >
                   <span>Read Guide</span>
                   <ArrowRight className="w-3.5 h-3.5 transform group-hover/link:translate-x-1 transition-transform" />

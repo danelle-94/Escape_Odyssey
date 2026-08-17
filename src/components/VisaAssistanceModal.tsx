@@ -80,15 +80,15 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md animate-fadeIn">
-      <div className="relative w-full max-w-xl bg-white border border-purple-200 rounded-2xl shadow-[0_20px_50px_rgba(124,58,237,0.15)] overflow-hidden text-slate-800">
+      <div className="relative w-full max-w-xl bg-white border border-blue-200 rounded-2xl shadow-[0_20px_50px_rgba(1,93,165,0.15)] overflow-hidden text-slate-800">
         
         {/* Top Gradient Border Accent */}
-        <div className="h-1.5 w-full bg-[#0074B5]" />
+        <div className="h-1.5 w-full bg-[#015da5]" />
 
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-100 bg-slate-50/80">
           <div>
-            <span className="text-[11px] font-bold tracking-widest text-[#0074B5] uppercase">
+            <span className="text-[11px] font-bold tracking-widest text-[#015da5] uppercase">
               EXPERT CONSULTATION
             </span>
             <h3 className="text-xl font-bold text-slate-900 font-cinzel">
@@ -112,12 +112,12 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
               </div>
               <h4 className="text-2xl font-bold text-slate-900 font-cinzel">Request Received!</h4>
               <p className="text-slate-600 text-sm max-w-md mx-auto font-medium">
-                Thank you <span className="text-purple-700 font-semibold">{formData.fullName}</span>. Our senior visa consultant will contact you on <span className="text-slate-900 font-mono font-bold">{formData.phone}</span> within 15 minutes.
+                Thank you <span className="text-[#015da5] font-semibold">{formData.fullName}</span>. Our senior visa consultant will contact you on <span className="text-slate-900 font-mono font-bold">{formData.phone}</span> within 15 minutes.
               </p>
-              <div className="p-4 bg-purple-50 rounded-xl border border-purple-200 text-left text-xs text-slate-700 space-y-2 mt-4 font-medium">
-                <div className="flex items-center justify-between text-purple-800 font-bold">
+              <div className="p-4 bg-blue-50 rounded-xl border border-blue-200 text-left text-xs text-slate-700 space-y-2 mt-4 font-medium">
+                <div className="flex items-center justify-between text-[#015da5] font-bold">
                   <span>Fastest Response Option:</span>
-                  <ShieldCheck className="w-4 h-4 text-purple-600" />
+                  <ShieldCheck className="w-4 h-4 text-[#015da5]" />
                 </div>
                 <p>Connect directly via WhatsApp to fast-track document checklist verification right away.</p>
               </div>
@@ -150,7 +150,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                       placeholder="e.g. Rahul Sharma"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -165,7 +165,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                       placeholder="+91 98765 43210"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -179,7 +179,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                     <select
                       value={formData.destination}
                       onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
                     >
                       <option value="Schengen Area">Schengen Europe (France, Italy, Germany, etc.)</option>
                       <option value="United States">United States (USA)</option>
@@ -199,7 +199,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                   <select
                     value={formData.visaType}
                     onChange={(e) => setFormData({ ...formData, visaType: e.target.value })}
-                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
+                    className="w-full px-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
                   >
                     <option value="Tourist Visa">Tourist Visa</option>
                     <option value="Business Visa">Business Visa</option>
@@ -220,7 +220,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -233,7 +233,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                       type="date"
                       value={formData.travelDate}
                       onChange={(e) => setFormData({ ...formData, travelDate: e.target.value })}
-                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
+                      className="w-full pl-9 pr-3 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -246,14 +246,14 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                   placeholder="Mention previous travel history, embassy appointment urgency, or special requests..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                  className="w-full px-3 py-2 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                 />
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 py-3 px-6 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                  className="flex-1 py-3 px-6 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all"
                 >
                   <Send className="w-4 h-4" /> Request Visa Guidance
                 </button>
@@ -268,7 +268,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
               </div>
 
               <p className="text-center text-[11px] text-slate-500 font-medium mt-2">
-                🔒 100% Confidential. Or call directly at <a href={`tel:${DISPLAY_PHONE}`} className="text-purple-700 underline font-mono font-bold">{DISPLAY_PHONE}</a>
+                🔒 100% Confidential. Or call directly at <a href={`tel:${DISPLAY_PHONE}`} className="text-[#015da5] underline font-mono font-bold">{DISPLAY_PHONE}</a>
               </p>
             </form>
           )}

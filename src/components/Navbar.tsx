@@ -37,7 +37,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
     <header 
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/90 backdrop-blur-md border-b border-purple-100 py-3 shadow-md' 
+          ? 'bg-white/90 backdrop-blur-md border-b border-blue-100 py-3 shadow-md' 
           : 'bg-gradient-to-b from-white/95 via-white/70 to-transparent py-4'
       }`}
     >
@@ -54,10 +54,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
             <a
               key={link.name}
               href={link.href}
-              className="px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold text-slate-700 hover:text-purple-700 transition-colors relative group whitespace-nowrap"
+              className="px-2.5 xl:px-3 py-2 text-xs xl:text-sm font-semibold text-slate-700 hover:text-[#015da5] transition-colors relative group whitespace-nowrap"
             >
               {link.name}
-              <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[#0074B5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              <span className="absolute bottom-0 left-3 right-3 h-[2.5px] rounded-full bg-[#015da5] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </a>
           ))}
         </nav>
@@ -68,9 +68,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           <a
             href={`tel:${DISPLAY_PHONE}`}
             onClick={() => trackVisitorEvent('phone_clicked')}
-            className="flex items-center gap-2 text-slate-700 hover:text-[#0074B5] text-xs xl:text-sm font-semibold transition-colors group whitespace-nowrap"
+            className="flex items-center gap-2 text-slate-700 hover:text-[#015da5] text-xs xl:text-sm font-semibold transition-colors group whitespace-nowrap"
           >
-            <div className="w-8 h-8 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-[#0074B5] group-hover:bg-[#0074B5] group-hover:text-white transition-all shadow-sm flex-shrink-0">
+            <div className="w-8 h-8 rounded-full bg-blue-50 border border-blue-200 flex items-center justify-center text-[#015da5] group-hover:bg-[#015da5] group-hover:text-white transition-all shadow-sm flex-shrink-0">
               <PhoneCall className="w-3.5 h-3.5" />
             </div>
             <span className="font-mono text-xs xl:text-sm whitespace-nowrap">{DISPLAY_PHONE}</span>
@@ -79,7 +79,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           {/* Primary CTA */}
           <button
             onClick={() => onOpenModal()}
-            className="px-5 py-2.5 rounded-full bg-[#0074B5] hover:bg-[#005C91] text-white font-bold text-xs xl:text-sm shadow-[0_4px_18px_rgba(0,116,181,0.3)] transition-all flex items-center gap-1.5 transform hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
+            className="px-5 py-2.5 rounded-full bg-[#015da5] hover:bg-[#01477f] text-white font-bold text-xs xl:text-sm shadow-[0_4px_18px_rgba(1,93,165,0.3)] transition-all flex items-center gap-1.5 transform hover:-translate-y-0.5 whitespace-nowrap flex-shrink-0"
           >
             <span className="whitespace-nowrap">Get Visa Assistance</span>
             <ArrowRight className="w-3.5 h-3.5 flex-shrink-0" />
@@ -100,7 +100,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 text-slate-700 hover:text-[#0074B5] bg-white/90 border border-slate-200 rounded-xl shadow-sm"
+            className="p-2.5 text-slate-700 hover:text-[#015da5] bg-white/90 border border-slate-200 rounded-xl shadow-sm"
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -118,7 +118,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-[#0074B5] hover:bg-blue-50 rounded-lg transition-colors"
+                className="px-4 py-2.5 text-sm font-semibold text-slate-700 hover:text-[#015da5] hover:bg-blue-50 rounded-lg transition-colors"
               >
                 {link.name}
               </a>
@@ -128,9 +128,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
           <div className="pt-4 border-t border-slate-100 space-y-3">
             <a
               href={`tel:${DISPLAY_PHONE}`}
-              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-blue-50 border border-blue-200 text-[#0074B5] font-mono font-semibold text-sm"
+              className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-blue-50 border border-blue-200 text-[#015da5] font-mono font-semibold text-sm"
             >
-              <PhoneCall className="w-4 h-4 text-[#0074B5]" />
+              <PhoneCall className="w-4 h-4 text-[#015da5]" />
               Call / WhatsApp: {DISPLAY_PHONE}
             </a>
 
@@ -139,7 +139,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenModal }) => {
                 setMobileMenuOpen(false);
                 onOpenModal();
               }}
-              className="w-full py-3 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
+              className="w-full py-3 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-bold text-sm shadow-md flex items-center justify-center gap-2"
             >
               <span>Get Visa Assistance</span>
               <ArrowRight className="w-4 h-4" />

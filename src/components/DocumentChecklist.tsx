@@ -15,12 +15,12 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
 
   const getCategoryIcon = (iconName: string) => {
     switch (iconName) {
-      case 'BookOpen': return <BookOpen className="w-5 h-5 text-[#0074B5]" />;
-      case 'CreditCard': return <CreditCard className="w-5 h-5 text-[#0074B5]" />;
-      case 'Plane': return <Plane className="w-5 h-5 text-[#0074B5]" />;
-      case 'Briefcase': return <Briefcase className="w-5 h-5 text-[#0074B5]" />;
-      case 'Heart': return <Heart className="w-5 h-5 text-[#0074B5]" />;
-      default: return <FileText className="w-5 h-5 text-[#0074B5]" />;
+      case 'BookOpen': return <BookOpen className="w-5 h-5 text-[#015da5]" />;
+      case 'CreditCard': return <CreditCard className="w-5 h-5 text-[#015da5]" />;
+      case 'Plane': return <Plane className="w-5 h-5 text-[#015da5]" />;
+      case 'Briefcase': return <Briefcase className="w-5 h-5 text-[#015da5]" />;
+      case 'Heart': return <Heart className="w-5 h-5 text-[#015da5]" />;
+      default: return <FileText className="w-5 h-5 text-[#015da5]" />;
     }
   };
 
@@ -54,8 +54,8 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
                 onClick={() => setActiveTab(tab.id as any)}
                 className={`px-5 py-2.5 rounded-xl text-xs font-bold transition-all ${
                   activeTab === tab.id
-                    ? 'bg-[#0074B5] text-white shadow-md'
-                    : 'bg-white text-slate-700 hover:text-[#0074B5] border border-slate-200 shadow-sm'
+                    ? 'bg-[#015da5] text-white shadow-md'
+                    : 'bg-white text-slate-700 hover:text-[#015da5] border border-slate-200 shadow-sm'
                 }`}
               >
                 {tab.label}
@@ -69,7 +69,7 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
           {filteredCategories.map((cat) => (
             <div
               key={cat.id}
-              className="bg-white rounded-2xl p-6 border border-purple-100 hover:border-purple-300 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,116,181,0.1)] flex flex-col justify-between"
+              className="bg-white rounded-2xl p-6 border border-blue-100 hover:border-blue-300 transition-all shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(1,93,165,0.1)] flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-4">
@@ -92,7 +92,7 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
                 </ul>
               </div>
 
-              <div className="pt-3 border-t border-slate-100 text-[10px] text-[#0074B5] font-semibold flex items-center gap-1">
+              <div className="pt-3 border-t border-slate-100 text-[10px] text-[#015da5] font-semibold flex items-center gap-1">
                 <span>Verified by Escape Odyssey Document Auditors</span>
               </div>
             </div>
@@ -102,8 +102,8 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
         {/* Disclaimer & CTA Card */}
         <div className="bg-blue-50/70 rounded-2xl p-6 sm:p-8 border border-blue-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="space-y-2 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-[#0074B5] text-xs font-bold uppercase tracking-wider">
-              <ShieldAlert className="w-4 h-4 text-[#0074B5]" /> Important Document Notice
+            <div className="flex items-center justify-center md:justify-start gap-2 text-[#015da5] text-xs font-bold uppercase tracking-wider">
+              <ShieldAlert className="w-4 h-4 text-[#015da5]" /> Important Document Notice
             </div>
             <p className="text-xs text-slate-600 font-medium max-w-2xl">
               * Note: Exact document specifications (such as bank balance thresholds, photo dimensions, and invitation templates) vary depending on your target destination country, citizenship, and visa stream.
@@ -112,7 +112,7 @@ export const DocumentChecklist: React.FC<DocumentChecklistProps> = ({ onOpenModa
 
           <button
             onClick={onOpenModal}
-            className="px-8 py-3.5 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-bold text-sm shadow-md flex items-center gap-2 flex-shrink-0"
+            className="px-8 py-3.5 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-bold text-sm shadow-md flex items-center gap-2 flex-shrink-0"
           >
             <span>Check My Documents</span>
             <ArrowRight className="w-4 h-4" />

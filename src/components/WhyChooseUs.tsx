@@ -5,13 +5,13 @@ import { UserCheck, Zap, ShieldCheck, Globe, Eye, Headphones } from 'lucide-reac
 export const WhyChooseUs: React.FC = () => {
   const getFeatureIcon = (iconName: string) => {
     switch (iconName) {
-      case 'UserCheck': return <UserCheck className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
-      case 'Zap': return <Zap className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
-      case 'ShieldCheck': return <ShieldCheck className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
-      case 'Globe': return <Globe className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
-      case 'Eye': return <Eye className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
-      case 'Headphones': return <Headphones className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
-      default: return <ShieldCheck className="w-6 h-6 text-[#0074B5] group-hover:text-white transition-colors" />;
+      case 'UserCheck': return <UserCheck className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
+      case 'Zap': return <Zap className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
+      case 'Globe': return <Globe className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
+      case 'Eye': return <Eye className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
+      case 'Headphones': return <Headphones className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
+      default: return <ShieldCheck className="w-6 h-6 text-[#015da5] group-hover:text-white transition-colors" />;
     }
   };
 
@@ -41,15 +41,15 @@ export const WhyChooseUs: React.FC = () => {
           {FEATURES.map((feature) => (
             <div
               key={feature.id}
-              className="p-8 rounded-2xl bg-white border border-purple-100 hover:border-purple-300 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(0,116,181,0.1)] group"
+              className="p-8 rounded-2xl bg-white border border-blue-100 hover:border-blue-300 transition-all duration-300 hover:-translate-y-1.5 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_12px_30px_rgba(1,93,165,0.1)] group"
             >
               {/* Icon Container */}
-              <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-6 group-hover:bg-[#0074B5] transition-all shadow-sm">
+              <div className="w-14 h-14 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center mb-6 group-hover:bg-[#015da5] transition-all shadow-sm">
                 {getFeatureIcon(feature.icon)}
               </div>
 
               {/* Title & Description */}
-              <h3 className="text-xl font-bold text-slate-900 font-cinzel mb-3 group-hover:text-[#0074B5] transition-colors">
+              <h3 className="text-xl font-bold text-slate-900 font-cinzel mb-3 group-hover:text-[#015da5] transition-colors">
                 {feature.title}
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed font-medium">
@@ -69,7 +69,7 @@ export const WhyChooseUs: React.FC = () => {
             href="https://wa.me/918796815817?text=Hello%20Escape%20Odyssey%2C%20I%20have%20a%20specific%20visa%20question."
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex-shrink-0"
+            className="px-6 py-3 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all flex-shrink-0"
           >
             Consult an Expert
           </a>

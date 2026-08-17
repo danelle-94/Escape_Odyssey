@@ -60,7 +60,7 @@ export const ContactSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
-          <span className="text-xs font-bold text-purple-900 uppercase tracking-widest px-3.5 py-1 rounded-full bg-white border border-purple-200 shadow-sm">
+          <span className="text-xs font-bold text-blue-900 uppercase tracking-widest px-3.5 py-1 rounded-full bg-white border border-blue-200 shadow-sm">
             GET IN TOUCH WITH OUR EXPERTS
           </span>
           <h2 className="text-3xl sm:text-4xl xl:text-5xl font-extrabold text-slate-900 font-cinzel">
@@ -76,7 +76,7 @@ export const ContactSection: React.FC = () => {
           {/* Left Column: Direct Contact Details & Brand Card (Cols 1-5) */}
           <div className="lg:col-span-5 space-y-6">
             
-            <div className="bg-white rounded-2xl p-8 border border-purple-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] space-y-6">
+            <div className="bg-white rounded-2xl p-8 border border-blue-100 shadow-[0_4px_20px_rgba(0,0,0,0.03)] space-y-6">
               
               <h3 className="text-xl font-bold text-slate-900 font-cinzel border-b border-slate-100 pb-4">
                 Direct Contact Information
@@ -84,14 +84,14 @@ export const ContactSection: React.FC = () => {
 
               {/* Call / WhatsApp */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#015da5] flex-shrink-0 shadow-sm">
                   <PhoneCall className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold uppercase text-purple-800 tracking-wider">Call / WhatsApp</div>
+                  <div className="text-xs font-bold uppercase text-[#015da5] tracking-wider">Call / WhatsApp</div>
                   <a 
                     href={`tel:${DISPLAY_PHONE}`}
-                    className="text-lg font-bold font-mono text-slate-900 hover:text-purple-700 transition-colors block"
+                    className="text-lg font-bold font-mono text-slate-900 hover:text-[#015da5] transition-colors block"
                   >
                     {DISPLAY_PHONE}
                   </a>
@@ -101,14 +101,14 @@ export const ContactSection: React.FC = () => {
 
               {/* Official Email */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#015da5] flex-shrink-0 shadow-sm">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold uppercase text-purple-800 tracking-wider">Official Email</div>
+                  <div className="text-xs font-bold uppercase text-[#015da5] tracking-wider">Official Email</div>
                   <a 
                     href={`mailto:${BUSINESS_EMAIL}`}
-                    className="text-sm font-semibold text-slate-900 hover:text-purple-700 transition-colors font-mono block"
+                    className="text-sm font-semibold text-slate-900 hover:text-[#015da5] transition-colors font-mono block"
                   >
                     {BUSINESS_EMAIL}
                   </a>
@@ -118,11 +118,11 @@ export const ContactSection: React.FC = () => {
 
               {/* Office Address Placeholder */}
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 flex-shrink-0 shadow-sm">
+                <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-[#015da5] flex-shrink-0 shadow-sm">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold uppercase text-purple-800 tracking-wider">Office Location</div>
+                  <div className="text-xs font-bold uppercase text-[#015da5] tracking-wider">Office Location</div>
                   <div className="text-sm font-semibold text-slate-900">[Office Address]</div>
                   <p className="text-xs text-slate-500 font-medium">In-person consultations by appointment</p>
                 </div>
@@ -149,7 +149,7 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Right Column: Contact Form (Cols 6-12) */}
-          <div className="lg:col-span-7 bg-white rounded-2xl p-8 border border-purple-100 shadow-[0_10px_35px_rgba(139,92,246,0.08)]">
+          <div className="lg:col-span-7 bg-white rounded-2xl p-8 border border-blue-100 shadow-[0_10px_35px_rgba(1,93,165,0.08)]">
             
             {submitted ? (
               <div className="py-12 text-center space-y-4">
@@ -158,7 +158,7 @@ export const ContactSection: React.FC = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-slate-900 font-cinzel">Request Submitted Successfully!</h3>
                 <p className="text-slate-600 text-sm max-w-md mx-auto font-medium">
-                  Thank you <span className="text-purple-700 font-semibold">{formData.fullName}</span>. Our visa specialist will review your request and get back to you at <span className="text-slate-900 font-mono font-bold">{formData.phone}</span> shortly.
+                  Thank you <span className="text-[#015da5] font-semibold">{formData.fullName}</span>. Our visa specialist will review your request and get back to you at <span className="text-slate-900 font-mono font-bold">{formData.phone}</span> shortly.
                 </p>
                 
                 <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
@@ -191,7 +191,7 @@ export const ContactSection: React.FC = () => {
                       placeholder="e.g. Aditi Kulkarni"
                       value={formData.fullName}
                       onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -203,7 +203,7 @@ export const ContactSection: React.FC = () => {
                       placeholder="+91 8796815817"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -216,7 +216,7 @@ export const ContactSection: React.FC = () => {
                       placeholder="name@example.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                     />
                   </div>
 
@@ -225,7 +225,7 @@ export const ContactSection: React.FC = () => {
                     <select
                       value={formData.destination}
                       onChange={(e) => setFormData({ ...formData, destination: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
                     >
                       <option value="Schengen Europe">Schengen Europe</option>
                       <option value="United States">United States</option>
@@ -246,7 +246,7 @@ export const ContactSection: React.FC = () => {
                     <select
                       value={formData.visaType}
                       onChange={(e) => setFormData({ ...formData, visaType: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
                     >
                       <option value="Tourist Visa">Tourist Visa</option>
                       <option value="Business Visa">Business Visa</option>
@@ -262,7 +262,7 @@ export const ContactSection: React.FC = () => {
                       type="date"
                       value={formData.travelDate}
                       onChange={(e) => setFormData({ ...formData, travelDate: e.target.value })}
-                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 focus:outline-none transition-colors"
                     />
                   </div>
                 </div>
@@ -274,13 +274,13 @@ export const ContactSection: React.FC = () => {
                     placeholder="Tell us about your trip details, number of applicants, or specific embassy queries..."
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-purple-500 focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
+                    className="w-full px-4 py-2.5 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-[#0074B5] hover:bg-[#005C91] text-white font-extrabold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-extrabold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
                 >
                   <Send className="w-4 h-4" /> Request Visa Assistance
                 </button>
