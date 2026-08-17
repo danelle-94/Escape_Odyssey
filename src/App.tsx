@@ -8,6 +8,7 @@ import { VisaProcess } from './components/VisaProcess';
 import { PopularDestinations } from './components/PopularDestinations';
 import { TravelInspiration } from './components/TravelInspiration';
 import { DocumentChecklist } from './components/DocumentChecklist';
+import { FAQSection } from './components/FAQSection';
 import { CallToAction } from './components/CallToAction';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -95,7 +96,10 @@ export function App() {
         {/* 8. Document Checklist Interactive Tool */}
         <DocumentChecklist onOpenModal={() => handleOpenModal()} />
 
-        {/* 9. High-Impact CTA Section */}
+        {/* 9. FAQ Section for SEO & AEO (Google / Perplexity / ChatGPT) */}
+        <FAQSection onOpenModal={() => handleOpenModal()} />
+
+        {/* 10. High-Impact CTA Section */}
         <CallToAction />
 
         {/* 10. Contact Section */}

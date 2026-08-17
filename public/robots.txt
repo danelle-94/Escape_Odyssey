@@ -1,0 +1,20 @@
+# Escape Odyssey Travel & Tours Robots.txt
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+
+# AI Search Engine Crawlers (AEO / GEO Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://escapeodysseytravel.netlify.app/sitemap.xml
