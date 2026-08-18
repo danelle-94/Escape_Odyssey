@@ -161,7 +161,7 @@ export const handler = async (event) => {
 
       // Send email notification to owner
       try {
-        const resendApiKey = process.env.RESEND_API_KEY;
+        const resendApiKey = process.env.RESEND_API_KEY || process.env.MY_RESEND_KEY || process.env.EMAIL_API_KEY;
         const notifyEmail = process.env.NOTIFICATION_EMAIL || 'visaescapeodyssey@gmail.com';
         if (resendApiKey) {
           const resend = new Resend(resendApiKey);
