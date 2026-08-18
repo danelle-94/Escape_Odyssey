@@ -165,7 +165,7 @@ export const handler = async (event) => {
         const notifyEmail = process.env.NOTIFICATION_EMAIL || 'visaescapeodyssey@gmail.com';
         if (resendApiKey) {
           const resend = new Resend(resendApiKey);
-          await resend.emails.send({
+          const emailResult = await resend.emails.send({
             from: 'Escape Odyssey Leads <onboarding@resend.dev>',
             to: notifyEmail,
             subject: `🚀 New Visa Lead: ${fullName} → ${destination || 'Not Specified'}`,
@@ -196,11 +196,16 @@ export const handler = async (event) => {
               </div>
             `,
           });
-          console.log(`[Email Sent] New lead notification sent for inquiry #${inquiryId}`);
+          if (emailResult?.error) {
+            console.error('[Resend Error Detail]:', JSON.stringify(emailResult.error));
+          } else {
+            console.log(`[Email Sent Successfully]:`, JSON.stringify(emailResult?.data));
+          }
+        } else {
+          console.log('[Email Notice]: RESEND_API_KEY is not set on Netlify');
         }
       } catch (emailError) {
-        console.warn('[Email Error] Failed to send notification:', emailError.message);
-        // Don't fail the request if email fails
+        console.warn('[Email Exception]:', emailError.message);
       }
 
       return {
