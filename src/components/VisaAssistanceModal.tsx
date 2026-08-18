@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, Send, PhoneCall, CheckCircle2, Globe, Calendar, User, Mail, ShieldCheck } from 'lucide-react';
+import { X, Send, PhoneCall, CheckCircle2, Globe, Calendar, User, Mail, ShieldCheck, Loader2 } from 'lucide-react';
 import { DISPLAY_PHONE } from '../data/websiteData';
 import { trackVisitorEvent, submitInquiryToDb } from '../lib/analytics';
 
@@ -27,6 +27,7 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   React.useEffect(() => {
     if (isOpen) {
@@ -41,6 +42,9 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    
+    setIsSubmitting(true);
     
     // Save inquiry to backend SQLite DB
     try {
@@ -55,6 +59,8 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
       });
     } catch (err) {
       console.warn('[DB Submit] Backend call error, falling back locally', err);
+    } finally {
+      setIsSubmitting(false);
     }
 
     setSubmitted(true);
@@ -244,16 +250,28 @@ export const VisaAssistanceModal: React.FC<VisaAssistanceModalProps> = ({
                   placeholder="Mention previous travel history, embassy appointment urgency, or special requests..."
                   value={formData.notes}
                   onChange={(e) => setFormData({ ...formData, notes: e.target.value })}
-                  className="w-full px-3 py-2 bg-slate-50 border border-slate-200 focus:border-[#015da5] focus:bg-white rounded-xl text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none transition-colors"
                 />
               </div>
 
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="submit"
-                  className="flex-1 py-3 px-6 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all"
+                  disabled={isSubmitting}
+                  className={`flex-1 py-3 px-6 rounded-xl text-white font-bold flex items-center justify-center gap-2 shadow-md transition-all ${
+                    isSubmitting 
+                      ? 'bg-blue-400 cursor-not-allowed opacity-90' 
+                      : 'bg-[#015da5] hover:bg-[#01477f] active:scale-98 cursor-pointer'
+                  }`}
                 >
-                  <Send className="w-4 h-4" /> Request Visa Guidance
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin text-white" /> Sending Request...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" /> Request Visa Guidance
+                    </>
+                  )}
                 </button>
                 
                 <button

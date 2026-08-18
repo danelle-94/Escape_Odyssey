@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { PhoneCall, Mail, MapPin, Send, MessageSquare, CheckCircle2 } from 'lucide-react';
+import { PhoneCall, Mail, MapPin, Send, MessageSquare, CheckCircle2, Loader2 } from 'lucide-react';
 import { DISPLAY_PHONE, BUSINESS_EMAIL, WHATSAPP_LINK } from '../data/websiteData';
 import { trackVisitorEvent, submitInquiryToDb } from '../lib/analytics';
 
@@ -15,9 +15,13 @@ export const ContactSection: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
 
     try {
       await submitInquiryToDb({
@@ -31,6 +35,8 @@ export const ContactSection: React.FC = () => {
       });
     } catch (err) {
       console.warn('[DB Submit] Contact form backend save error:', err);
+    } finally {
+      setIsSubmitting(false);
     }
 
     setSubmitted(true);
@@ -280,9 +286,22 @@ export const ContactSection: React.FC = () => {
 
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-[#015da5] hover:bg-[#01477f] text-white font-extrabold text-sm shadow-md hover:shadow-lg flex items-center justify-center gap-2 transition-all"
+                  disabled={isSubmitting}
+                  className={`w-full py-3.5 px-6 rounded-xl text-white font-extrabold text-sm shadow-md flex items-center justify-center gap-2 transition-all ${
+                    isSubmitting
+                      ? 'bg-blue-400 cursor-not-allowed opacity-90'
+                      : 'bg-[#015da5] hover:bg-[#01477f] active:scale-98 cursor-pointer hover:shadow-lg'
+                  }`}
                 >
-                  <Send className="w-4 h-4" /> Request Visa Assistance
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin text-white" /> Sending Request...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4" /> Request Visa Assistance
+                    </>
+                  )}
                 </button>
               </form>
             )}
